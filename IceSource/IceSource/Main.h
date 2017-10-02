@@ -20,7 +20,7 @@ DWORD WINAPI CmdPipe(PVOID lvpParameter)
 	HANDLE hPipe;
 	char buffer[1024];
 	DWORD dwRead;
-	hPipe = CreateNamedPipe(TEXT("\\\\.\\pipe\\IceCmd"),
+	hPipe = CreateNamedPipe(TEXT("\\\\.\\pipe\\IceCmd"),//IceCmd is the name of the command pipe
 		PIPE_ACCESS_DUPLEX | PIPE_TYPE_BYTE | PIPE_READMODE_BYTE,
 		PIPE_WAIT,
 		1,
@@ -56,7 +56,7 @@ DWORD WINAPI LuaCPipe(PVOID lvpParameter)
 	HANDLE hPipe;
 	char buffer[1024];
 	DWORD dwRead;
-	hPipe = CreateNamedPipe(TEXT("\\\\.\\pipe\\IceLuaC"),
+	hPipe = CreateNamedPipe(TEXT("\\\\.\\pipe\\IceLuaC"),//IceLuaC is the name of the lua c pipe
 		PIPE_ACCESS_DUPLEX | PIPE_TYPE_BYTE | PIPE_READMODE_BYTE,
 		PIPE_WAIT,
 		1,
@@ -88,9 +88,9 @@ DWORD WINAPI LuaCPipe(PVOID lvpParameter)
 }
 
 int Init() {
-	CreateThread(NULL, 0, CmdPipe, NULL, 0, NULL);//command pipe
-	CreateThread(NULL, 0, LuaCPipe, NULL, 0, NULL);//lua c pipe
+	CreateThread(NULL, 0, CmdPipe, NULL, 0, NULL);//Create new thread for command pipe
+	CreateThread(NULL, 0, LuaCPipe, NULL, 0, NULL);//Create new thread for lua c pipe
 	Scan();//Scan lua state
-	MessageBox(NULL, "\nIce has loaded Correctly! ", "Ice Source", MB_OK | MB_TOPMOST);//Messagebox so we can know when scan finished
+	MessageBox(NULL, "\nIce has loaded Correctly!\nnow you can use Ice ", "Ice Source", MB_OK | MB_TOPMOST);//Messagebox so we can know when scan finished
 	return 0;
 }
