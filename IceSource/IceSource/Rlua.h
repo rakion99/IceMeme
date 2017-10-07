@@ -100,7 +100,7 @@ namespace Rlua {
 	Lua_pushstring rlua_pushstring = (Lua_pushstring)aobscan::scan("\x55\x8B\xEC\x8B\x55\x0C\x85\xD2\x75\x0D", "xxxxxxxxxx");
 
 	typedef void(__cdecl *Lua_pushvalue)(RLUAState lst, int index);
-	Lua_pushvalue rlua_pushvalue = (Lua_pushvalue)Retcheck::unprotect(aobscan::scan("\x55\x8B\xEC\x56\xFF\x75\x0C\x8B\x75\x08\x56\xE8\x00\x00\x00\x00\x8B\x56\x10\x83\xC4\x08", "xxxxxxxxxxxx????xxxxxx"));
+	Lua_pushvalue rlua_pushvalue = (Lua_pushvalue)Retcheck::unprotect(aobscan::scan("\x55\x8B\xEC\x56\xFF\x75\x0C\x8B\x75\x08\x56\xE8\x00\x00\x00\x00\x8B\x56\x1C\x83\xC4\x08", "xxxxxxxxxxxx????xxxxxx"));
 
 	typedef int(__cdecl *Lua_pcall)(RLUAState lst, int nargs, int nresults, int errfunc);
 	Lua_pcall rlua_pcall = (Lua_pcall)Retcheck::unprotect(aobscan::scan("\x55\x8B\xEC\x8B\x45\x14\x83\xEC\x08\x57", "xxxxxxxxxx"));

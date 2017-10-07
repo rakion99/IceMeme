@@ -87,7 +87,7 @@ void Scan() {
 	Workspace = FindFirstClass(DataModel, "Workspace");
 	Players = FindFirstClass(DataModel, "Players");
 	Lighting = FindFirstClass(DataModel, "Lighting");
-	luaState = *(DWORD*)(ScriptContext + 220) ^ (ScriptContext + 220);
+	luaState = ScriptContext + 220 + *(DWORD*)(ScriptContext + 220);
 }
 
 void CustomizeConsole(char* title) {
