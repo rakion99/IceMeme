@@ -103,7 +103,7 @@ namespace Rlua {
 	Lua_pushvalue rlua_pushvalue = (Lua_pushvalue)Retcheck::unprotect(aobscan::scan("\x55\x8B\xEC\x56\xFF\x75\x0C\x8B\x75\x08\x56\xE8\x00\x00\x00\x00\x8B\x56\x1C\x83\xC4\x08", "xxxxxxxxxxxx????xxxxxx"));
 
 	typedef int(__cdecl *Lua_pcall)(RLUAState lst, int nargs, int nresults, int errfunc);
-	Lua_pcall rlua_pcall = (Lua_pcall)Retcheck::unprotect(aobscan::scan("\x55\x8B\xEC\x8B\x45\x14\x83\xEC\x08\x57", "xxxxxxxxxx"));
+	Lua_pcall rlua_pcall = (Lua_pcall)Retcheck::unprotect(aobscan::scan("\x55\x8B\xEC\x8B\x4D\x0C\x57\x8B\x7D\x08\xFF\x75\x10", "xxxxxxxxxxxxx"));//this is call aobs/signature, i will change the name soon :P
 
 	typedef void(__cdecl *Lua_setfield)(RLUAState lst, int index, const char *k);
 	Lua_setfield rlua_setfield = (Lua_setfield)Retcheck::unprotect(aobscan::scan("\x55\x8B\xEC\x83\xEC\x10\x53\x56\x8B\x75\x08\x57\xFF\x75\x0C\x56\xE8\x00\x00\x00\x00\x8B\x55\x10\x83\xC4\x08\x8B\xCA\x8B\xF8\x8D\x59\x01\x8A\x01\x41\x84\xC0\x75\xF9\x2B\xCB\x51\x52\x56\xE8\x00\x00\x00\x00\x89\x45\xF0", "xxxxxxxxxxxxxxxxx????xxxxxxxxxxxxxxxxxxxxxxxxxx????xxx"));
