@@ -154,11 +154,57 @@ namespace IceSourceUI
                 CmdBox.AppendText("\n" +//Append text to the command richtextbox
                     "Commands:\n" +
                     "ff [p]\n" +
+                    "heaven [p]\n" +
+                    "ghost [p]\n" +
+                    "statchange [p] [stat] [#]\n" +
+                    "keemstar [p]\n" +
+                    "illuminati [p]\n" +
+                    "duck [p]\n" +
+                    "mlg [p]\n" +
+                    "pussy [p]\n" +
+                    "fog [#]\n" +
+                    "rfog\n" +
+                    "rhat [p]\n" +
                     "ws [p] [#]\n" +
-                    "jp [p] [#]\n" +
                     "sit [p]\n" +
+                    "hipheight [p] [#]\n" +
+                    "jp [p] [#]\n" +
                     "kill [p]\n" +
-                    "and others");
+                    "drivebloxmoney [p]\n" +
+                    "gravity [#]\n" +
+                    "btools [p]\n" +
+                    "god [p]\n" +
+                    "bigfire [p]\n" +
+                    "time [#]\n" +
+                    "select [p]\n" +
+                    "fencingr\n" +
+                    "forcechat [p] [blue/red/green]\n" +
+                    "charapp [p] [#]\n" +
+                    "noob [p]\n" +
+                    "fire [p]\n" +
+                    "smoke [p]\n" +
+                    "sethealth [p] [#]\n" +
+                    "addhealth [p] [#]\n" +
+                    "sparkles [p]\n" +
+                    "criminal\n" +
+                    "garage\n" +
+                    "bank\n" +
+                    "prison\n" +
+                    "nodoors\n" +
+                    "banklazers\n" +
+                    "jewelrycameras\n" +
+                    "jewelrylazers\n" +
+                    "jewelryflazers\n" +
+                    "jewelry\n" +
+                    "rickroll\n" +
+                    "ppap\n" +
+                    "billnye\n" +
+                    "illuminati\n" +
+                    "rage\n" +
+                    "cringe\n" +
+                    "clearws\n" +
+                    "unanchorall\n" +
+                    "Some Commands may not work");
                 CmdTextBox.Clear();//clear the command textbox
             }
             else if (CmdTextBox.Text.ToLower() == "credits")//check if the user send credits so we can display the credits
