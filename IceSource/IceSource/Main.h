@@ -12,6 +12,7 @@
 #include "Scan.h"
 #include "Functions.h"
 #include "Commands.h"
+#include "Auth.h"
 
 using namespace std;
 //Command pipe
@@ -90,6 +91,7 @@ DWORD WINAPI LuaCPipe(PVOID lvpParameter)
 int Init() {
 	CreateThread(NULL, 0, CmdPipe, NULL, 0, NULL);//Create new thread for command pipe
 	CreateThread(NULL, 0, LuaCPipe, NULL, 0, NULL);//Create new thread for lua c pipe
+	//Auth(); //uncomment this function to enable the whitelist duh
 	Scan();//Scan lua state
 	MessageBox(NULL, "\nIce has loaded Correctly!\nnow you can use Ice!\nMade by Josh() and updated by rakion99", "Ice", MB_OK | MB_TOPMOST);//Messagebox so we can know when scan finished
 	return 0;
