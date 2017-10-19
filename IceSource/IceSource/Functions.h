@@ -42,7 +42,7 @@ void getService(std::string service)
 	rlua_getfield(luaState, -1, "GetService");
 	rlua_pushvalue(luaState, -2);
 	rlua_pushstring(luaState, service.c_str());
-	rlua_pcall(luaState, 2, 1, 0);
+	rlua_call(luaState, 2, 1);
 }
 
 const char* GetClass(int self)
@@ -87,23 +87,5 @@ void Scan() {
 	Workspace = FindFirstClass(DataModel, "Workspace");
 	Players = FindFirstClass(DataModel, "Players");
 	Lighting = FindFirstClass(DataModel, "Lighting");
-	luaState = ScriptContext + 220 + *(DWORD*)(ScriptContext + 220);
-}
-
-void CustomizeConsole(char* title) {
-	DWORD Null;
-	VirtualProtect((PVOID)&FreeConsole, 1, PAGE_EXECUTE_READWRITE, &Null);
-	*(BYTE*)(&FreeConsole) = 0xC3;
-	AllocConsole();
-	SetConsoleTitleA(title);
-	freopen("CONOUT$", "w", stdout);
-	freopen("CONIN$", "r", stdin);
-	HWND ConsoleHandle = GetConsoleWindow();
-	::SetWindowPos(ConsoleHandle, HWND_NOTOPMOST, 0, 0, 0, 0, SWP_DRAWFRAME | SWP_NOMOVE | SWP_NOSIZE | SWP_SHOWWINDOW);
-}
-
-std::string GetInput() {
-	std::string input;
-	getline(std::cin, input);
-	return input;
+	luaState = ScriptContext + 220 - *(DWORD*)(ScriptContext + 220);
 }

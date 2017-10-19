@@ -111,6 +111,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Auth.h" />
     <ClInclude Include="Commands.h" />
     <ClInclude Include="Functions.h" />
     <ClInclude Include="Main.h" />

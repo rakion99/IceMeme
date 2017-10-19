@@ -89,7 +89,7 @@ void ExecuteCommand(std::string cmd) {
 				rlua_getfield(luaState, -1, "new");
 				rlua_pushstring(luaState, "ForceField");
 				rlua_pushvalue(luaState, -4);
-				rlua_pcall(luaState, 2, 0, 0);
+				rlua_call(luaState, 2, 0);;
 			}
 			else {
 				rlua_getglobal(luaState, "game");
@@ -100,7 +100,7 @@ void ExecuteCommand(std::string cmd) {
 				rlua_getfield(luaState, -1, "new");
 				rlua_pushstring(luaState, "ForceField");
 				rlua_pushvalue(luaState, -4);
-				rlua_pcall(luaState, 2, 0, 0);
+				rlua_call(luaState, 2, 0);;
 			}
 			cout << ">-> ";
 		}
@@ -117,7 +117,7 @@ void ExecuteCommand(std::string cmd) {
 				rlua_getfield(luaState, -1, "new");
 				rlua_pushstring(luaState, "BodyVelocity");
 				rlua_pushvalue(luaState, -4);
-				rlua_pcall(luaState, 2, 1, 0);
+				rlua_call(luaState, 2, 1);;
 
 				rlua_getglobal(luaState, "game");
 				getService("Players");
@@ -127,7 +127,7 @@ void ExecuteCommand(std::string cmd) {
 				rlua_pushstring(luaState, "BodyVelocity");
 				rlua_getfield(luaState, -1, "Destroy");
 				rlua_pushvalue(luaState, -2);
-				rlua_pcall(luaState, 1, 0, 0);
+				rlua_call(luaState, 1, 0);;
 			}
 			else {
 				rlua_getglobal(luaState, "game");
@@ -139,7 +139,7 @@ void ExecuteCommand(std::string cmd) {
 				rlua_getfield(luaState, -1, "new");
 				rlua_pushstring(luaState, "BodyVelocity");
 				rlua_pushvalue(luaState, -4);
-				rlua_pcall(luaState, 2, 1, 0);
+				rlua_call(luaState, 2, 1);;
 
 				rlua_getglobal(luaState, "game");
 				getService("Players");
@@ -149,7 +149,7 @@ void ExecuteCommand(std::string cmd) {
 				rlua_pushstring(luaState, "BodyVelocity");
 				rlua_getfield(luaState, -1, "Destroy");
 				rlua_pushvalue(luaState, -2);
-				rlua_pcall(luaState, 1, 0, 0);
+				rlua_call(luaState, 1, 0);;
 			}
 			cout << ">-> ";
 		}
@@ -164,7 +164,7 @@ void ExecuteCommand(std::string cmd) {
 				rlua_getfield(luaState, -1, "Head");
 				rlua_pushnumber(luaState, .5);
 				rlua_setfield(luaState, -2, "Transparency");
-				rlua_pcall(luaState, 1, 0, 0);
+				rlua_call(luaState, 1, 0);;
 				rlua_settop(luaState, 0);
 				rlua_getglobal(luaState, "game");
 				rlua_getfield(luaState, -1, "Players");
@@ -174,7 +174,7 @@ void ExecuteCommand(std::string cmd) {
 				rlua_getfield(luaState, -1, "face");
 				rlua_pushnumber(luaState, .5);
 				rlua_setfield(luaState, -2, "Transparency");
-				rlua_pcall(luaState, 1, 0, 0);
+				rlua_call(luaState, 1, 0);;
 				rlua_settop(luaState, 0);
 				rlua_getglobal(luaState, "game");
 				rlua_getfield(luaState, -1, "Players");
@@ -183,7 +183,7 @@ void ExecuteCommand(std::string cmd) {
 				rlua_getfield(luaState, -1, "Torso");
 				rlua_pushnumber(luaState, .5);
 				rlua_setfield(luaState, -2, "Transparency");
-				rlua_pcall(luaState, 1, 0, 0);
+				rlua_call(luaState, 1, 0);;
 				rlua_settop(luaState, 0);
 				rlua_getglobal(luaState, "game");
 				rlua_getfield(luaState, -1, "Players");
@@ -192,7 +192,7 @@ void ExecuteCommand(std::string cmd) {
 				rlua_getfield(luaState, -1, "Right Arm");
 				rlua_pushnumber(luaState, .5);
 				rlua_setfield(luaState, -2, "Transparency");
-				rlua_pcall(luaState, 1, 0, 0);
+				rlua_call(luaState, 1, 0);;
 				rlua_settop(luaState, 0);
 				rlua_getglobal(luaState, "game");
 				rlua_getfield(luaState, -1, "Players");
@@ -201,7 +201,7 @@ void ExecuteCommand(std::string cmd) {
 				rlua_getfield(luaState, -1, "Left Arm");
 				rlua_pushnumber(luaState, .5);
 				rlua_setfield(luaState, -2, "Transparency");
-				rlua_pcall(luaState, 1, 0, 0);
+				rlua_call(luaState, 1, 0);;
 				rlua_settop(luaState, 0);
 				rlua_getglobal(luaState, "game");
 				rlua_getfield(luaState, -1, "Players");
@@ -210,7 +210,7 @@ void ExecuteCommand(std::string cmd) {
 				rlua_getfield(luaState, -1, "Right Leg");
 				rlua_pushnumber(luaState, .5);
 				rlua_setfield(luaState, -2, "Transparency");
-				rlua_pcall(luaState, 1, 0, 0);
+				rlua_call(luaState, 1, 0);;
 				rlua_settop(luaState, 0);
 				rlua_getglobal(luaState, "game");
 				rlua_getfield(luaState, -1, "Players");
@@ -218,7 +218,7 @@ void ExecuteCommand(std::string cmd) {
 				rlua_getfield(luaState, -1, "Character");
 				rlua_getfield(luaState, -1, "Left Leg");
 				rlua_setfield(luaState, -2, "Transparency");
-				rlua_pcall(luaState, 1, 0, 0);
+				rlua_call(luaState, 1, 0);;
 				rlua_settop(luaState, 0);
 			}
 			else {
@@ -229,7 +229,7 @@ void ExecuteCommand(std::string cmd) {
 				rlua_getfield(luaState, -1, "Head");
 				rlua_pushnumber(luaState, .5);
 				rlua_setfield(luaState, -2, "Transparency");
-				rlua_pcall(luaState, 1, 0, 0);
+				rlua_call(luaState, 1, 0);;
 				rlua_settop(luaState, 0);
 				rlua_getglobal(luaState, "game");
 				rlua_getfield(luaState, -1, "Players");
@@ -239,7 +239,7 @@ void ExecuteCommand(std::string cmd) {
 				rlua_getfield(luaState, -1, "face");
 				rlua_pushnumber(luaState, .5);
 				rlua_setfield(luaState, -2, "Transparency");
-				rlua_pcall(luaState, 1, 0, 0);
+				rlua_call(luaState, 1, 0);;
 				rlua_settop(luaState, 0);
 				rlua_getglobal(luaState, "game");
 				rlua_getfield(luaState, -1, "Players");
@@ -248,7 +248,7 @@ void ExecuteCommand(std::string cmd) {
 				rlua_getfield(luaState, -1, "Torso");
 				rlua_pushnumber(luaState, .5);
 				rlua_setfield(luaState, -2, "Transparency");
-				rlua_pcall(luaState, 1, 0, 0);
+				rlua_call(luaState, 1, 0);;
 				rlua_settop(luaState, 0);
 				rlua_getglobal(luaState, "game");
 				rlua_getfield(luaState, -1, "Players");
@@ -257,7 +257,7 @@ void ExecuteCommand(std::string cmd) {
 				rlua_getfield(luaState, -1, "Right Arm");
 				rlua_pushnumber(luaState, .5);
 				rlua_setfield(luaState, -2, "Transparency");
-				rlua_pcall(luaState, 1, 0, 0);
+				rlua_call(luaState, 1, 0);;
 				rlua_settop(luaState, 0);
 				rlua_getglobal(luaState, "game");
 				rlua_getfield(luaState, -1, "Players");
@@ -266,7 +266,7 @@ void ExecuteCommand(std::string cmd) {
 				rlua_getfield(luaState, -1, "Left Arm");
 				rlua_pushnumber(luaState, .5);
 				rlua_setfield(luaState, -2, "Transparency");
-				rlua_pcall(luaState, 1, 0, 0);
+				rlua_call(luaState, 1, 0);;
 				rlua_settop(luaState, 0);
 				rlua_getglobal(luaState, "game");
 				rlua_getfield(luaState, -1, "Players");
@@ -275,7 +275,7 @@ void ExecuteCommand(std::string cmd) {
 				rlua_getfield(luaState, -1, "Right Leg");
 				rlua_pushnumber(luaState, .5);
 				rlua_setfield(luaState, -2, "Transparency");
-				rlua_pcall(luaState, 1, 0, 0);
+				rlua_call(luaState, 1, 0);;
 				rlua_settop(luaState, 0);
 				rlua_getglobal(luaState, "game");
 				rlua_getfield(luaState, -1, "Players");
@@ -283,7 +283,7 @@ void ExecuteCommand(std::string cmd) {
 				rlua_getfield(luaState, -1, "Character");
 				rlua_getfield(luaState, -1, "Left Leg");
 				rlua_setfield(luaState, -2, "Transparency");
-				rlua_pcall(luaState, 1, 0, 0);
+				rlua_call(luaState, 1, 0);;
 				rlua_settop(luaState, 0);
 			}
 			cout << ">-> ";
@@ -329,7 +329,7 @@ void ExecuteCommand(std::string cmd) {
 			rlua_getfield(luaState, -1, "new");
 			rlua_pushstring(luaState, "SpecialMesh");
 			rlua_pushvalue(luaState, -4);
-			rlua_pcall(luaState, 2, 1, 0);
+			rlua_call(luaState, 2, 1);;
 			std::string MeshId = "rbxassetid://471652548";
 			std::string TextureId = "rbxassetid://471652580";//
 
@@ -342,7 +342,7 @@ void ExecuteCommand(std::string cmd) {
 			rlua_pushnumber(luaState, 4);
 			rlua_pushnumber(luaState, 4);
 			rlua_pushnumber(luaState, 4);
-			rlua_pcall(luaState, 3, 1, 0);
+			rlua_call(luaState, 3, 1);;
 			rlua_setfield(luaState, -3, "Scale");
 
 			rlua_getglobal(luaState, "game");
@@ -436,7 +436,7 @@ void ExecuteCommand(std::string cmd) {
 			rlua_getfield(luaState, -1, "new");
 			rlua_pushstring(luaState, "Sound");
 			rlua_pushvalue(luaState, -4);
-			rlua_pcall(luaState, 2, 1, 0);
+			rlua_call(luaState, 2, 1);;
 
 			rlua_pushstring(luaState, ("rbxassetid://" + music).c_str());
 			rlua_setfield(luaState, -2, "SoundId");
@@ -449,7 +449,7 @@ void ExecuteCommand(std::string cmd) {
 
 			rlua_getfield(luaState, -1, "Play");
 			rlua_pushvalue(luaState, -2);
-			rlua_pcall(luaState, 1, 0, 0);
+			rlua_call(luaState, 1, 0);;
 			cout << ">-> ";
 		}
 
@@ -470,7 +470,7 @@ void ExecuteCommand(std::string cmd) {
 			rlua_getfield(luaState, -1, "new");
 			rlua_pushstring(luaState, "SpecialMesh");
 			rlua_pushvalue(luaState, -4);
-			rlua_pcall(luaState, 2, 1, 0);
+			rlua_call(luaState, 2, 1);;
 			std::string MeshId = "rbxassetid://438530093";
 			std::string TextureId = "rbxassetid://438530120";//
 
@@ -483,7 +483,7 @@ void ExecuteCommand(std::string cmd) {
 			rlua_pushnumber(luaState, 4);
 			rlua_pushnumber(luaState, 4);
 			rlua_pushnumber(luaState, 4);
-			rlua_pcall(luaState, 3, 1, 0);
+			rlua_call(luaState, 3, 1);;
 			rlua_setfield(luaState, -3, "Scale");
 
 			rlua_getglobal(luaState, "game");
@@ -577,7 +577,7 @@ void ExecuteCommand(std::string cmd) {
 			rlua_getfield(luaState, -1, "new");
 			rlua_pushstring(luaState, "Sound");
 			rlua_pushvalue(luaState, -4);
-			rlua_pcall(luaState, 2, 1, 0);
+			rlua_call(luaState, 2, 1);;
 
 			rlua_pushstring(luaState, ("rbxassetid://" + music).c_str());
 			rlua_setfield(luaState, -2, "SoundId");
@@ -601,7 +601,7 @@ void ExecuteCommand(std::string cmd) {
 			rlua_getfield(luaState, -1, "new");
 			rlua_pushstring(luaState, "SpecialMesh");
 			rlua_pushvalue(luaState, -4);
-			rlua_pcall(luaState, 2, 1, 0);
+			rlua_call(luaState, 2, 1);;
 			std::string MeshId = "rbxassetid://521754610";
 			std::string TextureId = "rbxassetid://521754612";
 
@@ -614,7 +614,7 @@ void ExecuteCommand(std::string cmd) {
 			rlua_pushnumber(luaState, 4);
 			rlua_pushnumber(luaState, 4);
 			rlua_pushnumber(luaState, 4);
-			rlua_pcall(luaState, 3, 1, 0);
+			rlua_call(luaState, 3, 1);;
 			rlua_setfield(luaState, -3, "Scale");
 
 			rlua_getglobal(luaState, "game");
@@ -708,7 +708,7 @@ void ExecuteCommand(std::string cmd) {
 			rlua_getfield(luaState, -1, "new");
 			rlua_pushstring(luaState, "Sound");
 			rlua_pushvalue(luaState, -4);
-			rlua_pcall(luaState, 2, 1, 0);
+			rlua_call(luaState, 2, 1);;
 
 			rlua_pushstring(luaState, ("rbxassetid://" + music).c_str());
 			rlua_setfield(luaState, -2, "SoundId");
@@ -732,7 +732,7 @@ void ExecuteCommand(std::string cmd) {
 			rlua_getfield(luaState, -1, "new");
 			rlua_pushstring(luaState, "SpecialMesh");
 			rlua_pushvalue(luaState, -4);
-			rlua_pcall(luaState, 2, 1, 0);
+			rlua_call(luaState, 2, 1);;
 			std::string MeshId = "rbxassetid://430452142";
 			std::string TextureId = "rbxassetid://430452215";
 
@@ -745,7 +745,7 @@ void ExecuteCommand(std::string cmd) {
 			rlua_pushnumber(luaState, 4);
 			rlua_pushnumber(luaState, 4);
 			rlua_pushnumber(luaState, 4);
-			rlua_pcall(luaState, 3, 1, 0);
+			rlua_call(luaState, 3, 1);;
 			rlua_setfield(luaState, -3, "Scale");
 
 			rlua_getglobal(luaState, "game");
@@ -839,7 +839,7 @@ void ExecuteCommand(std::string cmd) {
 			rlua_getfield(luaState, -1, "new");
 			rlua_pushstring(luaState, "Sound");
 			rlua_pushvalue(luaState, -4);
-			rlua_pcall(luaState, 2, 1, 0);
+			rlua_call(luaState, 2, 1);;
 
 			rlua_pushstring(luaState, ("rbxassetid://" + music).c_str());
 			rlua_setfield(luaState, -2, "SoundId");
@@ -863,7 +863,7 @@ void ExecuteCommand(std::string cmd) {
 			rlua_getfield(luaState, -1, "new");
 			rlua_pushstring(luaState, "SpecialMesh");
 			rlua_pushvalue(luaState, -4);
-			rlua_pcall(luaState, 2, 1, 0);
+			rlua_call(luaState, 2, 1);;
 			std::string MeshId = "rbxassetid://477053700";
 			std::string TextureId = "rbxassetid://477053711";
 
@@ -876,7 +876,7 @@ void ExecuteCommand(std::string cmd) {
 			rlua_pushnumber(luaState, 4);
 			rlua_pushnumber(luaState, 4);
 			rlua_pushnumber(luaState, 4);
-			rlua_pcall(luaState, 3, 1, 0);
+			rlua_call(luaState, 3, 1);;
 			rlua_setfield(luaState, -3, "Scale");
 
 			rlua_getglobal(luaState, "game");
@@ -970,7 +970,7 @@ void ExecuteCommand(std::string cmd) {
 			rlua_getfield(luaState, -1, "new");
 			rlua_pushstring(luaState, "Sound");
 			rlua_pushvalue(luaState, -4);
-			rlua_pcall(luaState, 2, 1, 0);
+			rlua_call(luaState, 2, 1);;
 
 			rlua_pushstring(luaState, ("rbxassetid://" + music).c_str());
 			rlua_setfield(luaState, -2, "SoundId");
@@ -983,7 +983,7 @@ void ExecuteCommand(std::string cmd) {
 			rlua_getfield(luaState, -1, "GetService");
 			rlua_pushvalue(luaState, -2);
 			rlua_pushstring(luaState, "Lighting");
-			rlua_pcall(luaState, 2, 1, 0);
+			rlua_call(luaState, 2, 1);;
 			rlua_pushnumber(luaState, stof(In.at(1).c_str()));
 			rlua_setfield(luaState, -2, "FogEnd");
 			cout << ">-> ";
@@ -995,7 +995,7 @@ void ExecuteCommand(std::string cmd) {
 			rlua_getfield(luaState, -1, "GetService");
 			rlua_pushvalue(luaState, -2);
 			rlua_pushstring(luaState, "Lighting");
-			rlua_pcall(luaState, 2, 1, 0);
+			rlua_call(luaState, 2, 1);;
 			rlua_pushnumber(luaState, 1000000);
 			rlua_setfield(luaState, -2, "FogEnd");
 			cout << ">-> ";
@@ -1017,7 +1017,7 @@ void ExecuteCommand(std::string cmd) {
 				rlua_pushnumber(luaState, 1);
 				rlua_pushnumber(luaState, 1);
 				rlua_pushnumber(luaState, 1);
-				rlua_pcall(luaState, 6, 1, 0);
+				rlua_call(luaState, 6, 1);;
 				rlua_setfield(luaState, -3, "Size");
 			}
 			else {
@@ -1034,7 +1034,7 @@ void ExecuteCommand(std::string cmd) {
 				rlua_pushnumber(luaState, 1);
 				rlua_pushnumber(luaState, 1);
 				rlua_pushnumber(luaState, 1);
-				rlua_pcall(luaState, 6, 1, 0);
+				rlua_call(luaState, 6, 1);;
 				rlua_setfield(luaState, -3, "Size");
 			}
 			cout << ">-> ";
@@ -1055,7 +1055,7 @@ void ExecuteCommand(std::string cmd) {
 				rlua_getfield(luaState, -1, "FindFirstChild");
 				rlua_pushvalue(luaState, -2);
 				rlua_pushstring(luaState, In.at(1).c_str());
-				rlua_pcall(luaState, 2, 1, 0);
+				rlua_call(luaState, 2, 1);;
 				if (!rlua_isnil(luaState, -1)) {
 					rlua_getfield(luaState, -1, "Character");
 					rlua_getfield(luaState, -1, "Humanoid");
@@ -1083,7 +1083,7 @@ void ExecuteCommand(std::string cmd) {
 				rlua_getfield(luaState, -1, "FindFirstChild");
 				rlua_pushvalue(luaState, -2);
 				rlua_pushstring(luaState, In.at(1).c_str());
-				rlua_pcall(luaState, 2, 1, 0);
+				rlua_call(luaState, 2, 1);;
 				if (!rlua_isnil(luaState, -1)) {
 					rlua_getfield(luaState, -1, "Character");
 					rlua_getfield(luaState, -1, "Humanoid");
@@ -1111,7 +1111,7 @@ void ExecuteCommand(std::string cmd) {
 				rlua_getfield(luaState, -1, "FindFirstChild");
 				rlua_pushvalue(luaState, -2);
 				rlua_pushstring(luaState, In.at(1).c_str());
-				rlua_pcall(luaState, 2, 1, 0);
+				rlua_call(luaState, 2, 1);;
 				if (!rlua_isnil(luaState, -1)) {
 					rlua_getfield(luaState, -1, "Character");
 					rlua_getfield(luaState, -1, "Humanoid");
@@ -1139,7 +1139,7 @@ void ExecuteCommand(std::string cmd) {
 				rlua_getfield(luaState, -1, "FindFirstChild");
 				rlua_pushvalue(luaState, -2);
 				rlua_pushstring(luaState, In.at(1).c_str());
-				rlua_pcall(luaState, 2, 1, 0);
+				rlua_call(luaState, 2, 1);;
 				if (!rlua_isnil(luaState, -1)) {
 					rlua_getfield(luaState, -1, "Character");
 					rlua_getfield(luaState, -1, "Humanoid");
@@ -1167,7 +1167,7 @@ void ExecuteCommand(std::string cmd) {
 				rlua_getfield(luaState, -1, "FindFirstChild");
 				rlua_pushvalue(luaState, -2);
 				rlua_pushstring(luaState, In.at(1).c_str());
-				rlua_pcall(luaState, 2, 1, 0);
+				rlua_call(luaState, 2, 1);;
 				if (!rlua_isnil(luaState, -1)) {
 					rlua_getfield(luaState, -1, "Character");
 					rlua_getfield(luaState, -1, "Humanoid");
@@ -1195,7 +1195,7 @@ void ExecuteCommand(std::string cmd) {
 				rlua_getfield(luaState, -1, "FindFirstChild");
 				rlua_pushvalue(luaState, -2);
 				rlua_pushstring(luaState, In.at(1).c_str());
-				rlua_pcall(luaState, 2, 1, 0);
+				rlua_call(luaState, 2, 1);;
 				if (!rlua_isnil(luaState, -1)) {
 					rlua_getfield(luaState, -1, "Playerdata");
 					rlua_getfield(luaState, -1, "Money");
@@ -1228,7 +1228,7 @@ void ExecuteCommand(std::string cmd) {
 					rlua_getfield(luaState, -1, "new");
 					rlua_pushstring(luaState, "HopperBin");
 					rlua_pushvalue(luaState, -4);
-					rlua_pcall(luaState, 2, 1, 0);
+					rlua_call(luaState, 2, 1);;
 
 					rlua_pushnumber(luaState, i);
 					rlua_setfield(luaState, -2, "Name");
@@ -1243,14 +1243,14 @@ void ExecuteCommand(std::string cmd) {
 					rlua_getfield(luaState, -1, "FindFirstChild");
 					rlua_pushvalue(luaState, -2);
 					rlua_pushstring(luaState, In.at(1).c_str());
-					rlua_pcall(luaState, 2, 1, 0);
+					rlua_call(luaState, 2, 1);;
 					if (!rlua_isnil(luaState, -1)) {
 						rlua_getfield(luaState, -1, "Backpack");
 						rlua_getfield(luaState, LUA_GLOBALSINDEX, "Instance");
 						rlua_getfield(luaState, -1, "new");
 						rlua_pushstring(luaState, "HopperBin");
 						rlua_pushvalue(luaState, -4);
-						rlua_pcall(luaState, 2, 1, 0);
+						rlua_call(luaState, 2, 1);;
 
 						rlua_pushnumber(luaState, i);
 						rlua_setfield(luaState, -2, "Name");
@@ -1279,7 +1279,7 @@ void ExecuteCommand(std::string cmd) {
 				rlua_getfield(luaState, -1, "FindFirstChild");
 				rlua_pushvalue(luaState, -2);
 				rlua_pushstring(luaState, In.at(1).c_str());
-				rlua_pcall(luaState, 2, 1, 0);
+				rlua_call(luaState, 2, 1);;
 				if (!rlua_isnil(luaState, -1)) {
 					rlua_getfield(luaState, -1, "Character");
 					rlua_getfield(luaState, -1, "Humanoid");
@@ -1301,7 +1301,7 @@ void ExecuteCommand(std::string cmd) {
 				rlua_getfield(luaState, -1, "new");
 				rlua_pushstring(luaState, "Fire");
 				rlua_pushvalue(luaState, -4);
-				rlua_pcall(luaState, 2, 1, 0);
+				rlua_call(luaState, 2, 1);;
 				if (!rlua_isnil(luaState, -1)) {
 					rlua_pushstring(luaState, "29");
 					rlua_setfield(luaState, -2, "Size");
@@ -1312,7 +1312,7 @@ void ExecuteCommand(std::string cmd) {
 				rlua_getfield(luaState, -1, "FindFirstChild");
 				rlua_pushvalue(luaState, -2);
 				rlua_pushstring(luaState, In.at(1).c_str());
-				rlua_pcall(luaState, 2, 1, 0);
+				rlua_call(luaState, 2, 1);;
 				if (!rlua_isnil(luaState, -1)) {
 					rlua_getfield(luaState, -1, "Character");
 					rlua_getfield(luaState, -1, "Torso");
@@ -1320,7 +1320,7 @@ void ExecuteCommand(std::string cmd) {
 					rlua_getfield(luaState, -1, "new");
 					rlua_pushstring(luaState, "Fire");
 					rlua_pushvalue(luaState, -4);
-					rlua_pcall(luaState, 2, 1, 0);
+					rlua_call(luaState, 2, 1);;
 					if (!rlua_isnil(luaState, -1)) {
 						rlua_pushstring(luaState, "29");
 						rlua_setfield(luaState, -2, "Size");
@@ -1356,7 +1356,7 @@ void ExecuteCommand(std::string cmd) {
 				rlua_getfield(luaState, -1, "new");
 				rlua_pushstring(luaState, "SelectionBox");
 				rlua_pushvalue(luaState, -4);
-				rlua_pcall(luaState, 2, 1, 0);
+				rlua_call(luaState, 2, 1);;
 
 				rlua_pushvalue(luaState, -3);
 				rlua_setfield(luaState, -2, "Adornee");
@@ -1371,7 +1371,7 @@ void ExecuteCommand(std::string cmd) {
 					rlua_getfield(luaState, -1, "new");
 					rlua_pushstring(luaState, "SelectionBox");
 					rlua_pushvalue(luaState, -4);
-					rlua_pcall(luaState, 2, 1, 0);
+					rlua_call(luaState, 2, 1);;
 
 					rlua_pushvalue(luaState, -3);
 					rlua_setfield(luaState, -2, "Adornee");
@@ -1392,7 +1392,7 @@ void ExecuteCommand(std::string cmd) {
 			rlua_getfield(luaState, -1, "new");
 			rlua_pushstring(luaState, "SelectionBox");
 			rlua_pushvalue(luaState, -4);
-			rlua_pcall(luaState, 2, 1, 0);
+			rlua_call(luaState, 2, 1);;
 
 			rlua_pushvalue(luaState, -3);
 			rlua_setfield(luaState, -2, "Adornee");
@@ -1414,7 +1414,7 @@ void ExecuteCommand(std::string cmd) {
 			rlua_pushstring(luaState, "1");
 			rlua_pushstring(luaState, "1");
 			rlua_pushstring(luaState, "30");
-			rlua_pcall(luaState, 3, 1, 0);
+			rlua_call(luaState, 3, 1);;
 			rlua_setfield(luaState, -7, "Size");
 			cout << ">-> ";
 		}
@@ -1444,7 +1444,7 @@ void ExecuteCommand(std::string cmd) {
 					rlua_pushvalue(luaState, -5);
 					rlua_pushstring(luaState, string.c_str());
 					rlua_pushstring(luaState, "Green");
-					rlua_pcall(luaState, 4, 1, 0);
+					rlua_call(luaState, 4, 1);;
 
 				}
 				if (tolower(In.at(2)) == "red") {
@@ -1469,7 +1469,7 @@ void ExecuteCommand(std::string cmd) {
 					rlua_pushvalue(luaState, -5);
 					rlua_pushstring(luaState, string.c_str());
 					rlua_pushstring(luaState, "Red");
-					rlua_pcall(luaState, 4, 1, 0);
+					rlua_call(luaState, 4, 1);;
 				}
 				if (tolower(In.at(2)) == "blue") {
 					std::string string;
@@ -1493,7 +1493,7 @@ void ExecuteCommand(std::string cmd) {
 					rlua_pushvalue(luaState, -5);
 					rlua_pushstring(luaState, string.c_str());
 					rlua_pushstring(luaState, "Blue");
-					rlua_pcall(luaState, 4, 1, 0);
+					rlua_call(luaState, 4, 1);;
 				}
 			}
 			else {
@@ -1519,7 +1519,7 @@ void ExecuteCommand(std::string cmd) {
 					rlua_pushvalue(luaState, -5);
 					rlua_pushstring(luaState, string.c_str());
 					rlua_pushstring(luaState, "Green");
-					rlua_pcall(luaState, 4, 1, 0);
+					rlua_call(luaState, 4, 1);;
 				}
 				if (tolower(In.at(2)) == "red") {
 					std::string string;
@@ -1543,7 +1543,7 @@ void ExecuteCommand(std::string cmd) {
 					rlua_pushvalue(luaState, -5);
 					rlua_pushstring(luaState, string.c_str());
 					rlua_pushstring(luaState, "Red");
-					rlua_pcall(luaState, 4, 1, 0);
+					rlua_call(luaState, 4, 1);;
 				}
 				if (tolower(In.at(2)) == "blue") {
 					std::string string;
@@ -1567,7 +1567,7 @@ void ExecuteCommand(std::string cmd) {
 					rlua_pushvalue(luaState, -5);
 					rlua_pushstring(luaState, string.c_str());
 					rlua_pushstring(luaState, "Blue");
-					rlua_pcall(luaState, 4, 1, 0);
+					rlua_call(luaState, 4, 1);;
 				}
 			}
 			cout << ">-> ";
@@ -1633,7 +1633,7 @@ void ExecuteCommand(std::string cmd) {
 				rlua_getfield(luaState, -1, "new");
 				rlua_pushstring(luaState, "Fire");
 				rlua_pushvalue(luaState, -4);
-				rlua_pcall(luaState, 2, 1, 0);
+				rlua_call(luaState, 2, 1);;
 			}
 			else {
 				getService("Players");
@@ -1645,7 +1645,7 @@ void ExecuteCommand(std::string cmd) {
 					rlua_getfield(luaState, -1, "new");
 					rlua_pushstring(luaState, "Fire");
 					rlua_pushvalue(luaState, -4);
-					rlua_pcall(luaState, 2, 1, 0);
+					rlua_call(luaState, 2, 1);;
 				}
 			}
 			cout << ">-> ";
@@ -1662,7 +1662,7 @@ void ExecuteCommand(std::string cmd) {
 				rlua_getfield(luaState, -1, "new");
 				rlua_pushstring(luaState, "Smoke");
 				rlua_pushvalue(luaState, -4);
-				rlua_pcall(luaState, 2, 1, 0);
+				rlua_call(luaState, 2, 1);;
 			}
 			else {
 				getService("Players");
@@ -1674,7 +1674,7 @@ void ExecuteCommand(std::string cmd) {
 					rlua_getfield(luaState, -1, "new");
 					rlua_pushstring(luaState, "Smoke");
 					rlua_pushvalue(luaState, -4);
-					rlua_pcall(luaState, 2, 1, 0);
+					rlua_call(luaState, 2, 1);;
 				}
 			}
 			cout << ">-> ";
@@ -1748,7 +1748,7 @@ void ExecuteCommand(std::string cmd) {
 					rlua_getfield(luaState, -1, "new");
 					rlua_pushstring(luaState, "Sparkles");
 					rlua_pushvalue(luaState, -4);
-					rlua_pcall(luaState, 2, 1, 0);
+					rlua_call(luaState, 2, 1);;
 
 					rlua_pushstring(luaState, "Ice Sparkles");
 					rlua_setfield(luaState, -2, "Name");
@@ -1763,7 +1763,7 @@ void ExecuteCommand(std::string cmd) {
 						rlua_getfield(luaState, -1, "new");
 						rlua_pushstring(luaState, "Sparkles");
 						rlua_pushvalue(luaState, -4);
-						rlua_pcall(luaState, 2, 1, 0);
+						rlua_call(luaState, 2, 1);;
 
 						rlua_pushstring(luaState, "Ice Sparkles");
 						rlua_setfield(luaState, -2, "Name");
@@ -1780,7 +1780,7 @@ void ExecuteCommand(std::string cmd) {
 					rlua_getfield(luaState, -1, "new");
 					rlua_pushstring(luaState, "Sparkles");
 					rlua_pushvalue(luaState, -4);
-					rlua_pcall(luaState, 2, 1, 0);
+					rlua_call(luaState, 2, 1);;
 
 					rlua_pushstring(luaState, "Ice Sparkles");
 					rlua_setfield(luaState, -2, "Name");
@@ -1804,7 +1804,7 @@ void ExecuteCommand(std::string cmd) {
 			rlua_pushnumber(luaState, -222.339157);
 			rlua_pushnumber(luaState, 17.9125443);
 			rlua_pushnumber(luaState, 1575.82336);
-			rlua_pcall(luaState, 3, 1, 0);
+			rlua_call(luaState, 3, 1);;
 			rlua_setfield(luaState, -3, "CFrame");
 			cout << ">-> ";
 		}
@@ -1820,7 +1820,7 @@ void ExecuteCommand(std::string cmd) {
 			rlua_pushnumber(luaState, -342.130798);
 			rlua_pushnumber(luaState, 19.3135223);
 			rlua_pushnumber(luaState, 1182.73669);
-			rlua_pcall(luaState, 3, 1, 0);
+			rlua_call(luaState, 3, 1);;
 			rlua_setfield(luaState, -3, "CFrame");
 			cout << ">-> ";
 		}
@@ -1836,7 +1836,7 @@ void ExecuteCommand(std::string cmd) {
 			rlua_pushnumber(luaState, 1.1110189);
 			rlua_pushnumber(luaState, 17.9213142);
 			rlua_pushnumber(luaState, 782.103455);
-			rlua_pcall(luaState, 3, 1, 0);
+			rlua_call(luaState, 3, 1);;
 			rlua_setfield(luaState, -3, "CFrame");
 			cout << ">-> ";
 		}
@@ -1852,7 +1852,7 @@ void ExecuteCommand(std::string cmd) {
 			rlua_pushnumber(luaState, -1100.4469);
 			rlua_pushnumber(luaState, 17.7500038);
 			rlua_pushnumber(luaState, -1493.18286);
-			rlua_pcall(luaState, 3, 1, 0);
+			rlua_call(luaState, 3, 1);;
 			rlua_setfield(luaState, -3, "CFrame");
 			cout << ">-> ";
 		}
@@ -1864,7 +1864,7 @@ void ExecuteCommand(std::string cmd) {
 			rlua_getfield(luaState, -1, "Doors");
 			rlua_getfield(luaState, -1, "Destroy");
 			rlua_pushvalue(luaState, -2);
-			rlua_pcall(luaState, 1, 0, 0);
+			rlua_call(luaState, 1, 0);;
 			cout << ">-> ";
 		}
 
@@ -1876,7 +1876,7 @@ void ExecuteCommand(std::string cmd) {
 			rlua_getfield(luaState, -1, "Lasers");
 			rlua_getfield(luaState, -1, "Destroy");
 			rlua_pushvalue(luaState, -2);
-			rlua_pcall(luaState, 1, 0, 0);
+			rlua_call(luaState, 1, 0);;
 			cout << ">-> ";
 		}
 
@@ -1888,7 +1888,7 @@ void ExecuteCommand(std::string cmd) {
 			rlua_getfield(luaState, -1, "Cameras");
 			rlua_getfield(luaState, -1, "Destroy");
 			rlua_pushvalue(luaState, -2);
-			rlua_pcall(luaState, 1, 0, 0);
+			rlua_call(luaState, 1, 0);;
 			cout << ">-> ";
 		}
 
@@ -1900,7 +1900,7 @@ void ExecuteCommand(std::string cmd) {
 			rlua_getfield(luaState, -1, "Lasers");
 			rlua_getfield(luaState, -1, "Destroy");
 			rlua_pushvalue(luaState, -2);
-			rlua_pcall(luaState, 1, 0, 0);
+			rlua_call(luaState, 1, 0);;
 			cout << ">-> ";
 		}
 
@@ -1912,7 +1912,7 @@ void ExecuteCommand(std::string cmd) {
 			rlua_getfield(luaState, -1, "FloorLasers");
 			rlua_getfield(luaState, -1, "Destroy");
 			rlua_pushvalue(luaState, -2);
-			rlua_pcall(luaState, 1, 0, 0);
+			rlua_call(luaState, 1, 0);;
 			cout << ">-> ";
 		}
 
@@ -1926,7 +1926,7 @@ void ExecuteCommand(std::string cmd) {
 			rlua_pushnumber(luaState, 124);
 			rlua_pushnumber(luaState, 17);
 			rlua_pushnumber(luaState, 1317);
-			rlua_pcall(luaState, 3, 1, 0);
+			rlua_call(luaState, 3, 1);;
 			rlua_setfield(luaState, -3, "CFrame");
 			cout << ">-> ";
 		}
@@ -1943,7 +1943,7 @@ void ExecuteCommand(std::string cmd) {
 			rlua_getfield(luaState, -1, "new");
 			rlua_pushstring(luaState, "Sound");
 			rlua_pushvalue(luaState, -4);
-			rlua_pcall(luaState, 2, 0, 0);
+			rlua_call(luaState, 2, 0);;
 
 			rlua_getglobal(luaState, "Workspace");
 			rlua_getfield(luaState, -1, "Sound");
@@ -1964,7 +1964,7 @@ void ExecuteCommand(std::string cmd) {
 			rlua_getfield(luaState, -1, "LuaC_Music");
 			rlua_getfield(luaState, -1, "Play");
 			rlua_pushvalue(luaState, -2);
-			rlua_pcall(luaState, 1, 0, 0);
+			rlua_call(luaState, 1, 0);;
 			cout << ">-> ";
 		}
 
@@ -1975,7 +1975,7 @@ void ExecuteCommand(std::string cmd) {
 			rlua_getfield(luaState, -1, "new");
 			rlua_pushstring(luaState, "Sound");
 			rlua_pushvalue(luaState, -4);
-			rlua_pcall(luaState, 2, 0, 0);
+			rlua_call(luaState, 2, 0);;
 
 			rlua_getglobal(luaState, "Workspace");
 			rlua_getfield(luaState, -1, "Sound");
@@ -1996,7 +1996,7 @@ void ExecuteCommand(std::string cmd) {
 			rlua_getfield(luaState, -1, "LuaC_Music");
 			rlua_getfield(luaState, -1, "Play");
 			rlua_pushvalue(luaState, -2);
-			rlua_pcall(luaState, 1, 0, 0);
+			rlua_call(luaState, 1, 0);;
 			cout << ">-> ";
 		}
 
@@ -2007,7 +2007,7 @@ void ExecuteCommand(std::string cmd) {
 			rlua_getfield(luaState, -1, "new");
 			rlua_pushstring(luaState, "Sound");
 			rlua_pushvalue(luaState, -4);
-			rlua_pcall(luaState, 2, 0, 0);
+			rlua_call(luaState, 2, 0);;
 
 			rlua_getglobal(luaState, "Workspace");
 			rlua_getfield(luaState, -1, "Sound");
@@ -2028,7 +2028,7 @@ void ExecuteCommand(std::string cmd) {
 			rlua_getfield(luaState, -1, "LuaC_Music");
 			rlua_getfield(luaState, -1, "Play");
 			rlua_pushvalue(luaState, -2);
-			rlua_pcall(luaState, 1, 0, 0);
+			rlua_call(luaState, 1, 0);;
 			cout << ">-> ";
 		}
 
@@ -2039,7 +2039,7 @@ void ExecuteCommand(std::string cmd) {
 			rlua_getfield(luaState, -1, "new");
 			rlua_pushstring(luaState, "Sound");
 			rlua_pushvalue(luaState, -4);
-			rlua_pcall(luaState, 2, 0, 0);
+			rlua_call(luaState, 2, 0);;
 
 			rlua_getglobal(luaState, "Workspace");
 			rlua_getfield(luaState, -1, "Sound");
@@ -2060,7 +2060,7 @@ void ExecuteCommand(std::string cmd) {
 			rlua_getfield(luaState, -1, "LuaC_Music");
 			rlua_getfield(luaState, -1, "Play");
 			rlua_pushvalue(luaState, -2);
-			rlua_pcall(luaState, 1, 0, 0);
+			rlua_call(luaState, 1, 0);;
 			cout << ">-> ";
 		}
 
@@ -2071,7 +2071,7 @@ void ExecuteCommand(std::string cmd) {
 			rlua_getfield(luaState, -1, "new");
 			rlua_pushstring(luaState, "Sound");
 			rlua_pushvalue(luaState, -4);
-			rlua_pcall(luaState, 2, 0, 0);
+			rlua_call(luaState, 2, 0);;
 
 			rlua_getglobal(luaState, "Workspace");
 			rlua_getfield(luaState, -1, "Sound");
@@ -2092,7 +2092,7 @@ void ExecuteCommand(std::string cmd) {
 			rlua_getfield(luaState, -1, "LuaC_Music");
 			rlua_getfield(luaState, -1, "Play");
 			rlua_pushvalue(luaState, -2);
-			rlua_pcall(luaState, 1, 0, 0);
+			rlua_call(luaState, 1, 0);;
 			cout << ">-> ";
 		}
 
@@ -2103,7 +2103,7 @@ void ExecuteCommand(std::string cmd) {
 			rlua_getfield(luaState, -1, "new");
 			rlua_pushstring(luaState, "Sound");
 			rlua_pushvalue(luaState, -4);
-			rlua_pcall(luaState, 2, 0, 0);
+			rlua_call(luaState, 2, 0);;
 
 			rlua_getglobal(luaState, "Workspace");
 			rlua_getfield(luaState, -1, "Sound");
@@ -2124,7 +2124,7 @@ void ExecuteCommand(std::string cmd) {
 			rlua_getfield(luaState, -1, "LuaC_Music");
 			rlua_getfield(luaState, -1, "Play");
 			rlua_pushvalue(luaState, -2);
-			rlua_pcall(luaState, 1, 0, 0);
+			rlua_call(luaState, 1, 0);;
 			cout << ">-> ";
 		}
 
@@ -2138,7 +2138,7 @@ void ExecuteCommand(std::string cmd) {
 			getService("Workspace");
 			rlua_getfield(luaState, -1, "ClearAllChildren");
 			rlua_pushvalue(luaState, -2);
-			rlua_pcall(luaState, 1, 0, 0);
+			rlua_call(luaState, 1, 0);;
 		}
 
 
@@ -2146,7 +2146,7 @@ void ExecuteCommand(std::string cmd) {
 			getService("Workspace");
 			rlua_getfield(luaState, -1, "GetChildren");
 			rlua_pushvalue(luaState, -2);
-			rlua_pcall(luaState, 1, 1, 0);
+			rlua_call(luaState, 1, 1);;
 			rlua_pushnil(luaState);
 			while (rlua_next(luaState, -2) != 0) {
 				rlua_getfield(luaState, -1, "ClassName");
@@ -2157,7 +2157,7 @@ void ExecuteCommand(std::string cmd) {
 				else if (rlua_tostring(luaState, -1) == "Model") {
 					rlua_getfield(luaState, -1, "GetChildren");
 					rlua_pushvalue(luaState, -2);
-					rlua_pcall(luaState, 1, 1, 0);
+					rlua_call(luaState, 1, 1);;
 					rlua_pushnil(luaState);
 					while (rlua_next(luaState, -2) != 0) {
 						rlua_getfield(luaState, -1, "ClassName");
@@ -2233,9 +2233,8 @@ void luaC(std::string input) {
 			rlua_pushnumber(luaState, stoi(In.at(1)));
 		}
 
-		else if (In.at(0) == "pcall") {
-			rlua_pcall(luaState, stoi(In.at(1)), stoi(In.at(2)), stoi(In.at(3)));
-
+		else if (In.at(0) == "pcall") {//this will be still pcall so you don't need to edit the lua c script
+			rlua_call(luaState, stoi(In.at(1)), stoi(In.at(2)));
 		}
 
 		else if (In.at(0) == "emptystack") {
