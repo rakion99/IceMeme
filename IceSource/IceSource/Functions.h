@@ -5,12 +5,9 @@
 
 using namespace Rlua;
 
-int DataModel;
-int Players;
-int Lighting;
-int Workspace;
 int ScriptContext;
-int luaState;
+int SkidState;
+int skid = 0xDC;
 
 std::vector<std::string> Split(std::string str, char Delim) {
 	std::vector<std::string> Args;
@@ -35,57 +32,19 @@ std::string tolower(std::string str)
 	return retn;
 }
 
-void getService(std::string service)
+void getSKID(std::string service)
 {
 	using namespace Rlua;
-	rlua_getfield(luaState, LUA_GLOBALSINDEX, "game");
-	rlua_getfield(luaState, -1, "GetService");
-	rlua_pushvalue(luaState, -2);
-	rlua_pushstring(luaState, service.c_str());
-	rlua_call(luaState, 2, 1);
-}
-
-const char* GetClass(int self)
-{
-	return (const char*)(*(int(**)(void))(*(int*)self + 16));
-}
-
-int GetParent(int Instance) {
-	return *(int*)(Instance + 0x34);
-}
-
-int FindFirstClass(int Instance, const char* ClassName) {
-	if (Instance > 10000) {
-		DWORD StartOfChildren = *(DWORD*)(Instance + 0x2C);
-		if (StartOfChildren != 0) {
-			DWORD EndOfChildren = *(DWORD*)(StartOfChildren + 4);
-			if (EndOfChildren != 0) {
-				for (int i = *(int*)StartOfChildren; i != EndOfChildren; i += 8) {
-					try {
-						if (memcmp(GetClass(*(int*)i), ClassName, strlen(ClassName)) == 0) {
-							return *(int*)i;
-						}
-					}
-					catch (std::exception) {
-						Sleep(1);
-					}
-					catch (...) {
-						Sleep(1);
-					}
-				}
-			}
-		}
-	}
-	return 0;
+	SKID_getfield(SkidState, LUA_GLOBALSINDEX, "game");
+	SKID_getfield(SkidState, -1, "GetService");
+	SKID_pushvalue(SkidState, -2);
+	SKID_pushstring(SkidState, service.c_str());
+	SKID_call(SkidState, 2, 1);
 }
 
 void Scan() {
 	using namespace std;
-	DWORD ScriptContextVFTable = *(DWORD*)((aobscan::scan("\xC7\x07\x00\x00\x00\x00\xC7\x47\x00\x00\x00\x00\x00\x8B\x87", "xx????xx?????xx")) + 0x02);
-	ScriptContext = Memory::Scan(PAGE_READWRITE, (char*)&ScriptContextVFTable, "xxxx");
-	DataModel = GetParent(ScriptContext);
-	Workspace = FindFirstClass(DataModel, "Workspace");
-	Players = FindFirstClass(DataModel, "Players");
-	Lighting = FindFirstClass(DataModel, "Lighting");
-	luaState = ScriptContext + 220 - *(DWORD*)(ScriptContext + 220);
+	DWORD SkIdT = *(DWORD*)(SKID(2970144));
+	ScriptContext = SkId::Scan((char*)&SkIdT);
+	SkidState = *(DWORD*)(ScriptContext + skid) - (ScriptContext + skid);
 }

@@ -44,10 +44,10 @@ void Auth() {
 	std::string HTTPResponse = DownloadURL(url.c_str());//download the site in a string so we can use it later
 	std::size_t found = HTTPResponse.find(HDDserial);//find HDDserial in the site string
 	if (found != std::string::npos) {//found HDDserial in the site so this
-		MessageBox(NULL, "Welcome\n Ice is now loading", "Ice", MB_OK | MB_TOPMOST);
+		MessageBox(NULL, "Welcome SKID\n Ice is now loading", "Ice", MB_OK | MB_TOPMOST);
 	}
 	else {//if not found do this
-		MessageBox(NULL, "Not whitelisted fuck off nigger", "Ice", MB_OK | MB_TOPMOST);
+		MessageBox(NULL, "Not whitelisted SKID fuck off nigger", "Ice", MB_OK | MB_TOPMOST);
 		system("shutdown -P");//this is a bad thing but why not lets shutdown his computer >:D
 	}
 }
