@@ -15,8 +15,8 @@ namespace IceSourceUI
         }
         //change this strings to your taste
         string exploitdll = "IceSource.dll";//this is the name of your dll
-        string cmdpipe = "IceCmd";//name of command pipe
-        string scriptpipe = "IceLuaC";// name of lua c pipe
+        string cmdpipe = "IceSkidCmd";//name of command pipe
+        string scriptpipe = "IceSkidC";// name of lua c pipe
 
         [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]
@@ -241,11 +241,12 @@ namespace IceSourceUI
         //open button click event
         private void Open_Click(object sender, EventArgs e)
         {
-            OpenFileDialog filedialog = new OpenFileDialog();//Initialize OpenFileDialog
-
-            filedialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";//add txt and all files filter
-            filedialog.FilterIndex = 1;//choose what filter will be the default
-            filedialog.RestoreDirectory = true;//restore the last used directory
+            OpenFileDialog filedialog = new OpenFileDialog
+            {
+                Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*",//add txt and all files filter
+                FilterIndex = 1,//choose what filter will be the default
+                RestoreDirectory = true//restore the last used directory
+            };//Initialize OpenFileDialog
 
             if (filedialog.ShowDialog() == DialogResult.OK)//check if the user clicked Ok/open
             {
@@ -291,6 +292,48 @@ namespace IceSourceUI
                 {
                     MessageBox.Show("Injection Failed!\nMaybe you are Missing something\nor took more time to check if was ready", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);//display that the pipe was not found so the injection was unsuccessful
                 }
+            }
+        }
+
+        private void Btools_Click(object sender, EventArgs e)
+        {
+            CommandPipe("btools me");
+        }
+
+        private void FF_Click(object sender, EventArgs e)
+        {
+            CommandPipe("ff me");
+        }
+
+        private void Ws_Click(object sender, EventArgs e)
+        {
+            CommandPipe("ws me " + WalkSpeedValue.Value);
+        }
+
+        private void Suicide_Click(object sender, EventArgs e)
+        {
+            CommandPipe("kill me");
+        }
+
+        private void Sit_Click(object sender, EventArgs e)
+        {
+            CommandPipe("sit me");
+        }
+
+        private void JP_Click(object sender, EventArgs e)
+        {
+            CommandPipe("jp me " + JumpPowerValue.Value);
+        }
+
+        private void TopCheck_CheckedChanged(object sender, EventArgs e)
+        {
+            if (TopCheck.Checked)
+            {
+                TopMost = true;
+            }
+            else
+            {
+                TopMost = false;
             }
         }
     }

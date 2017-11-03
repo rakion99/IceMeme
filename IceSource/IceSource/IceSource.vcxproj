@@ -111,13 +111,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Auth.h" />
-    <ClInclude Include="Commands.h" />
-    <ClInclude Include="Functions.h" />
-    <ClInclude Include="Main.h" />
+    <ClInclude Include="SkId1.h" />
+    <ClInclude Include="SkId2.h" />
+    <ClInclude Include="SkId3.h" />
+    <ClInclude Include="SkId.h" />
     <ClInclude Include="resource.h" />
-    <ClInclude Include="Rlua.h" />
-    <ClInclude Include="Scan.h" />
+    <ClInclude Include="SkId4.h" />
+    <ClInclude Include="SkId5.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>

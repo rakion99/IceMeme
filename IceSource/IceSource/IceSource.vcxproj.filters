@@ -15,21 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Commands.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Functions.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Main.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Rlua.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Scan.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="stdafx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -39,7 +24,22 @@
     <ClInclude Include="resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Auth.h">
+    <ClInclude Include="SkId1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SkId2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SkId.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SkId3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SkId4.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SkId5.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
