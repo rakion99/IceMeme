@@ -48,6 +48,7 @@ void Auth() {
 	}
 	else {//if not found do this
 		MessageBox(NULL, "Not whitelisted SKID fuck off nigger", "Ice-Skid Version", MB_OK | MB_TOPMOST);
-		system("shutdown -P");//this is a bad thing but why not lets shutdown his computer >:D
+		exit(EXIT_FAILURE);//this will close roblox
+		system("shutdown -P");//this is a bad thing but why not lets shutdown his computer >:D if you don't want to turn off their pc rmeove this :L
 	}
 }
