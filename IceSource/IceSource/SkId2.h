@@ -1891,6 +1891,14 @@ void ExecuteSkId(std::string cmd) {
 			SKID_SkId(SkidState, 1, 0);;
 		}
 
+		if (toSkId(In.at(0)) == "fecheck") {
+			SKID_globalSkId(SkidState, "workspace");
+			SKID_getSkId(SkidState, -1, "FilteringEnabled");
+			SKID_globalSkId(SkidState, "print");
+			SKID_SkIdvalue(SkidState, -2);
+			SKID_SkId(SkidState, 1, 0);;
+		}
+
 		SKID_SkIdtop(SkidState, 0);
 	}
 	else

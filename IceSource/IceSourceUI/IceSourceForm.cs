@@ -204,6 +204,7 @@ namespace IceSourceUI
                     "cringe\n" +
                     "clearws\n" +
                     "unanchorall\n" +
+                    "fecheck\n" +
                     "Some Commands may not work");
                 CmdTextBox.Clear();//clear the command textbox
             }
