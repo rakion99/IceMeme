@@ -8,8 +8,6 @@ typedef int(RSkidState);
 
 #define LUA_GLOBALSKID -10002
 #define SKID_globalSkId(l,g)			 Rlua::SKID_getSkId(l, LUA_GLOBALSKID, g)
-#define SKID_SkIdball(SkidState, boolean)     int property = *(DWORD *)(SkidState + 12); *(DWORD*)property = boolean; *(DWORD *)(property + 8) = 3; *(DWORD *)(SkidState + 12) += 16;
-#define SKID_SkIdring(l,idx)		 Rlua::SKID_toSkId(l, (idx), 0)
 
 DWORD SkidCheck(DWORD SkIdr)
 {
@@ -66,26 +64,23 @@ DWORD SkidCheck(DWORD SkIdr)
 
 namespace Rlua {
 	typedef void(__cdecl *Lua_getSkId)(RSkidState lst, int index, const char *k);
-	Lua_getSkId SKID_getSkId = (Lua_getSkId)SkidCheck(SKID(0b001101010000101011100000));
+	Lua_getSkId SKID_getSkId = (Lua_getSkId)SkidCheck(SKID(015155660));
 
 	typedef void(__cdecl *Lua_SkIdtop)(RSkidState lst, int index);
-	Lua_SkIdtop SKID_SkIdtop = (Lua_SkIdtop)SkidCheck(SKID(0b001101010010110001100000));
+	Lua_SkIdtop SKID_SkIdtop = (Lua_SkIdtop)SkidCheck(SKID(015176400));
 
 	typedef void(__cdecl *Lua_pushSkId)(RSkidState lst, const char *s);
-	Lua_pushSkId SKID_pushSkId = (Lua_pushSkId)SKID(0b001101010001111011000000);
+	Lua_pushSkId SKID_pushSkId = (Lua_pushSkId)SKID(015167600);
 
 	typedef void(__cdecl *Lua_SkIdvalue)(RSkidState lst, int index);
-	Lua_SkIdvalue SKID_SkIdvalue = (Lua_SkIdvalue)SkidCheck(SKID(0b001101010001111110100000));
+	Lua_SkIdvalue SKID_SkIdvalue = (Lua_SkIdvalue)SkidCheck(SKID(015170100));
 
 	typedef int(__cdecl *Lua_SkId)(RSkidState lst, int nargs, int nresults);
-	Lua_SkId SKID_SkId = (Lua_SkId)SkidCheck(SKID(0b001101010000010001110000));
+	Lua_SkId SKID_SkId = (Lua_SkId)SkidCheck(SKID(015152500));
 
 	typedef void(__cdecl *Lua_setSkId)(RSkidState lst, int index, const char *k);
-	Lua_setSkId SKID_setSkId = (Lua_setSkId)SkidCheck(SKID(0b001101010010100010000000));
+	Lua_setSkId SKID_setSkId = (Lua_setSkId)SkidCheck(SKID(015174440));
 
 	typedef void(__cdecl *Lua_hOwMaNySkIdS)(RSkidState lst, double n);
-	Lua_hOwMaNySkIdS SKID_hOwMaNySkIdS = (Lua_hOwMaNySkIdS)SkidCheck(SKID(0b001101010001111000110000));
-
-	typedef const char*(__cdecl *Lua_toSkId)(RSkidState lst, int idx, size_t *len);
-	Lua_toSkId SKID_toSkId = (Lua_toSkId)SkidCheck(SKID(0b001101010010111010100000));
+	Lua_hOwMaNySkIdS SKID_hOwMaNySkIdS = (Lua_hOwMaNySkIdS)SkidCheck(SKID(015167360));
 }

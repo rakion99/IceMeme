@@ -1510,39 +1510,6 @@ void ExecuteSkId(std::string cmd) {
 			}
 		}
 
-
-		if (toSkId(In.at(0)) == "addhealth") {
-			if (toSkId(In.at(1)) == "me" || toSkId(In.at(1)) == "localplr") {
-				getSKID("Players");
-				SKID_getSkId(SkidState, -1, "LocalPlayer");
-				SKID_getSkId(SkidState, -1, "Character");
-				SKID_getSkId(SkidState, -1, "Humanoid");
-				SKID_getSkId(SkidState, -1, "MaxHealth");
-				const char* MaxHealthVal = SKID_SkIdring(SkidState, -1);
-				getSKID("Players");
-				SKID_getSkId(SkidState, -1, "LocalPlayer");
-				SKID_getSkId(SkidState, -1, "Character");
-				SKID_getSkId(SkidState, -1, "Humanoid");
-				SKID_pushSkId(SkidState, (const char*)MaxHealthVal + atoi(In.at(2).c_str()));
-				SKID_setSkId(SkidState, -2, "MaxHealth");
-			}
-			else {
-				getSKID("Players");
-				SKID_getSkId(SkidState, -1, In.at(1).c_str());
-				SKID_getSkId(SkidState, -1, "Character");
-				SKID_getSkId(SkidState, -1, "Humanoid");
-				SKID_getSkId(SkidState, -1, "MaxHealth");
-				const char* MaxHealthVal = SKID_SkIdring(SkidState, -1);
-				getSKID("Players");
-				SKID_getSkId(SkidState, -1, In.at(1).c_str());
-				SKID_getSkId(SkidState, -1, "Character");
-				SKID_getSkId(SkidState, -1, "Humanoid");
-				SKID_pushSkId(SkidState, (const char*)MaxHealthVal + atoi(In.at(2).c_str()));
-				SKID_setSkId(SkidState, -2, "MaxHealth");
-			}
-		}
-
-
 		if (toSkId(In.at(0)) == "sparkles" || toSkId(In.at(0)) == "sp") {
 			if (toSkId(In.at(1)) == "me" || toSkId(In.at(1)) == "localplr") {
 				getSKID("Players");
@@ -1977,15 +1944,6 @@ void SkIdC(std::string input) {
 
 		else if (In.at(0) == "getservice") {
 			getSKID(In.at(1).c_str());
-		}
-
-		else if (In.at(0) == "pushboolean") {
-			if (In.at(1) == "false") {
-				SKID_SkIdball(SkidState, false);
-			}
-			else if (In.at(1) == "true") {
-				SKID_SkIdball(SkidState, true);
-			}
 		}
 
 	}

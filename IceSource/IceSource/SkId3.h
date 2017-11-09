@@ -7,7 +7,7 @@ using namespace Rlua;
 
 int Skidtest;
 int SkidState;
-int skid = 0b11011100;
+int skid = 0334;
 
 std::vector<std::string> SkIdT(std::string str, char Delim) {
 	std::vector<std::string> SkIds;
@@ -44,7 +44,7 @@ void getSKID(std::string service)
 
 void SKID() {
 	using namespace std;
-	DWORD SkIdT = *(DWORD*)(SKID(0b001011010001010011000000));
+	DWORD SkIdT = *(DWORD*)(SKID(013220560));
 	Skidtest = SkId::Scan((char*)&SkIdT);
-	SkidState = (Skidtest + skid) ^ *(DWORD*)(Skidtest + skid);
+	SkidState = *(DWORD*)(Skidtest + skid) - (Skidtest + skid);
 }
