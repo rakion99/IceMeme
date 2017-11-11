@@ -83,4 +83,7 @@ namespace Rlua {
 
 	typedef void(__cdecl *Lua_hOwMaNySkIdS)(RSkidState lst, double n);
 	Lua_hOwMaNySkIdS SKID_hOwMaNySkIdS = (Lua_hOwMaNySkIdS)SkidCheck(SKID(015167360));
+
+	typedef int*(__cdecl *SKIDLeVEL)();
+	SKIDLeVEL SKIDLeVeL = (SKIDLeVEL)SKID(06556440);
 }

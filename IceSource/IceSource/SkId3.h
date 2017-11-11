@@ -42,9 +42,17 @@ void getSKID(std::string service)
 	SKID_SkId(SkidState, 2, 1);
 }
 
+int *OPSKIDLeVeL() {
+	int *Level = SKIDLeVeL();
+	if (*Level == 0)
+		*Level = 9000;
+	return Level;
+}
+
 void SKID() {
 	using namespace std;
 	DWORD SkIdT = *(DWORD*)(SKID(013220560));
 	Skidtest = SkId::Scan((char*)&SkIdT);
 	SkidState = *(DWORD*)(Skidtest + skid) - (Skidtest + skid);
+	OPSKIDLeVeL();
 }
