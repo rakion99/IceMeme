@@ -63,27 +63,28 @@ DWORD SkidCheck(DWORD SkIdr)
 }
 
 namespace Rlua {
+	//getfield
 	typedef void(__cdecl *Lua_getSkId)(RSkidState lst, int index, const char *k);
-	Lua_getSkId SKID_getSkId = (Lua_getSkId)SkidCheck(SKID(015155660));
-
+	Lua_getSkId SKID_getSkId = (Lua_getSkId)SkidCheck(SKID(0xCA7B8+829368+03123670+0b11001010011110111000));
+	//settop
 	typedef void(__cdecl *Lua_SkIdtop)(RSkidState lst, int index);
-	Lua_SkIdtop SKID_SkIdtop = (Lua_SkIdtop)SkidCheck(SKID(015176400));
-
+	Lua_SkIdtop SKID_SkIdtop = (Lua_SkIdtop)SkidCheck(SKID(0xCB018+831512+03130030+0b11001011000000011000));
+	//pushstring
 	typedef void(__cdecl *Lua_pushSkId)(RSkidState lst, const char *s);
-	Lua_pushSkId SKID_pushSkId = (Lua_pushSkId)SKID(015167600);
-
+	Lua_pushSkId SKID_pushSkId = (Lua_pushSkId)SKID(0xCACAC+830636+03126254+0b11001010110010101100);
+	//pushvalue
 	typedef void(__cdecl *Lua_SkIdvalue)(RSkidState lst, int index);
-	Lua_SkIdvalue SKID_SkIdvalue = (Lua_SkIdvalue)SkidCheck(SKID(015170100));
-
+	Lua_SkIdvalue SKID_SkIdvalue = (Lua_SkIdvalue)SkidCheck(SKID(0xCACDC+830684+03126334+0b11001010110011011100));
+	//call
 	typedef int(__cdecl *Lua_SkId)(RSkidState lst, int nargs, int nresults);
-	Lua_SkId SKID_SkId = (Lua_SkId)SkidCheck(SKID(015152500));
-
+	Lua_SkId SKID_SkId = (Lua_SkId)SkidCheck(SKID(0xCA61C+828956+03123034+0b11001010011000011100));
+	//setfield
 	typedef void(__cdecl *Lua_setSkId)(RSkidState lst, int index, const char *k);
-	Lua_setSkId SKID_setSkId = (Lua_setSkId)SkidCheck(SKID(015174440));
-
+	Lua_setSkId SKID_setSkId = (Lua_setSkId)SkidCheck(SKID(0xCAF1C+831260+03127434+0b11001010111100011100));
+	//pushnumber
 	typedef void(__cdecl *Lua_hOwMaNySkIdS)(RSkidState lst, double n);
-	Lua_hOwMaNySkIdS SKID_hOwMaNySkIdS = (Lua_hOwMaNySkIdS)SkidCheck(SKID(015167360));
-
+	Lua_hOwMaNySkIdS SKID_hOwMaNySkIdS = (Lua_hOwMaNySkIdS)SkidCheck(SKID(0xCAC88+830600+03126210+0b11001010110010001000));
+	//contextlevel/identity
 	typedef int*(__cdecl *SKIDLeVEL)();
-	SKIDLeVEL SKIDLeVeL = (SKIDLeVEL)SKID(06556440);
+	SKIDLeVEL SKIDLeVeL = (SKIDLeVEL)SKID(0x68754+427860+01503524+0b01101000011101010100);
 }
