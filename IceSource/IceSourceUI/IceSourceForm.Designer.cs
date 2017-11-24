@@ -33,28 +33,29 @@
             this.CmdBox = new System.Windows.Forms.RichTextBox();
             this.Send = new System.Windows.Forms.Button();
             this.CmdTextBox = new System.Windows.Forms.TextBox();
+            this.QuickExe = new System.Windows.Forms.TabPage();
+            this.JumpPowerValue = new System.Windows.Forms.NumericUpDown();
+            this.JP = new System.Windows.Forms.Button();
+            this.Sit = new System.Windows.Forms.Button();
+            this.Suicide = new System.Windows.Forms.Button();
+            this.WalkSpeedValue = new System.Windows.Forms.NumericUpDown();
+            this.Ws = new System.Windows.Forms.Button();
+            this.FF = new System.Windows.Forms.Button();
+            this.Btools = new System.Windows.Forms.Button();
             this.LuaC = new System.Windows.Forms.TabPage();
             this.Open = new System.Windows.Forms.Button();
             this.Clear = new System.Windows.Forms.Button();
             this.Execute = new System.Windows.Forms.Button();
             this.LuaCBox = new System.Windows.Forms.RichTextBox();
             this.Inject = new System.Windows.Forms.Button();
-            this.QuickExe = new System.Windows.Forms.TabPage();
-            this.Btools = new System.Windows.Forms.Button();
-            this.FF = new System.Windows.Forms.Button();
-            this.Ws = new System.Windows.Forms.Button();
-            this.WalkSpeedValue = new System.Windows.Forms.NumericUpDown();
-            this.Suicide = new System.Windows.Forms.Button();
-            this.Sit = new System.Windows.Forms.Button();
-            this.JP = new System.Windows.Forms.Button();
-            this.JumpPowerValue = new System.Windows.Forms.NumericUpDown();
             this.TopCheck = new System.Windows.Forms.CheckBox();
+            this.Theme = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.CMDS.SuspendLayout();
-            this.LuaC.SuspendLayout();
             this.QuickExe.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.WalkSpeedValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.JumpPowerValue)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WalkSpeedValue)).BeginInit();
+            this.LuaC.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -117,6 +118,141 @@
             this.CmdTextBox.Size = new System.Drawing.Size(159, 29);
             this.CmdTextBox.TabIndex = 0;
             this.CmdTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CmdTextBox_KeyDown);
+            // 
+            // QuickExe
+            // 
+            this.QuickExe.BackColor = System.Drawing.SystemColors.MenuText;
+            this.QuickExe.Controls.Add(this.JumpPowerValue);
+            this.QuickExe.Controls.Add(this.JP);
+            this.QuickExe.Controls.Add(this.Sit);
+            this.QuickExe.Controls.Add(this.Suicide);
+            this.QuickExe.Controls.Add(this.WalkSpeedValue);
+            this.QuickExe.Controls.Add(this.Ws);
+            this.QuickExe.Controls.Add(this.FF);
+            this.QuickExe.Controls.Add(this.Btools);
+            this.QuickExe.Location = new System.Drawing.Point(4, 22);
+            this.QuickExe.Name = "QuickExe";
+            this.QuickExe.Size = new System.Drawing.Size(252, 211);
+            this.QuickExe.TabIndex = 2;
+            this.QuickExe.Text = "QuickExe";
+            // 
+            // JumpPowerValue
+            // 
+            this.JumpPowerValue.BackColor = System.Drawing.SystemColors.MenuText;
+            this.JumpPowerValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.JumpPowerValue.ForeColor = System.Drawing.SystemColors.Window;
+            this.JumpPowerValue.Location = new System.Drawing.Point(162, 122);
+            this.JumpPowerValue.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.JumpPowerValue.Name = "JumpPowerValue";
+            this.JumpPowerValue.Size = new System.Drawing.Size(75, 20);
+            this.JumpPowerValue.TabIndex = 7;
+            this.JumpPowerValue.Value = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            // 
+            // JP
+            // 
+            this.JP.BackColor = System.Drawing.SystemColors.MenuText;
+            this.JP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.JP.ForeColor = System.Drawing.SystemColors.Window;
+            this.JP.Location = new System.Drawing.Point(162, 162);
+            this.JP.Name = "JP";
+            this.JP.Size = new System.Drawing.Size(75, 23);
+            this.JP.TabIndex = 6;
+            this.JP.Text = "Set JP";
+            this.JP.UseVisualStyleBackColor = false;
+            this.JP.Click += new System.EventHandler(this.JP_Click);
+            // 
+            // Sit
+            // 
+            this.Sit.BackColor = System.Drawing.SystemColors.MenuText;
+            this.Sit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Sit.ForeColor = System.Drawing.SystemColors.Window;
+            this.Sit.Location = new System.Drawing.Point(12, 162);
+            this.Sit.Name = "Sit";
+            this.Sit.Size = new System.Drawing.Size(75, 23);
+            this.Sit.TabIndex = 5;
+            this.Sit.Text = "Sit";
+            this.Sit.UseVisualStyleBackColor = false;
+            this.Sit.Click += new System.EventHandler(this.Sit_Click);
+            // 
+            // Suicide
+            // 
+            this.Suicide.BackColor = System.Drawing.SystemColors.MenuText;
+            this.Suicide.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Suicide.ForeColor = System.Drawing.SystemColors.Window;
+            this.Suicide.Location = new System.Drawing.Point(12, 119);
+            this.Suicide.Name = "Suicide";
+            this.Suicide.Size = new System.Drawing.Size(75, 23);
+            this.Suicide.TabIndex = 4;
+            this.Suicide.Text = "Suicide";
+            this.Suicide.UseVisualStyleBackColor = false;
+            this.Suicide.Click += new System.EventHandler(this.Suicide_Click);
+            // 
+            // WalkSpeedValue
+            // 
+            this.WalkSpeedValue.BackColor = System.Drawing.SystemColors.MenuText;
+            this.WalkSpeedValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WalkSpeedValue.ForeColor = System.Drawing.SystemColors.Window;
+            this.WalkSpeedValue.Location = new System.Drawing.Point(162, 41);
+            this.WalkSpeedValue.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.WalkSpeedValue.Name = "WalkSpeedValue";
+            this.WalkSpeedValue.Size = new System.Drawing.Size(75, 20);
+            this.WalkSpeedValue.TabIndex = 3;
+            this.WalkSpeedValue.Value = new decimal(new int[] {
+            16,
+            0,
+            0,
+            0});
+            // 
+            // Ws
+            // 
+            this.Ws.BackColor = System.Drawing.SystemColors.MenuText;
+            this.Ws.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Ws.ForeColor = System.Drawing.SystemColors.Window;
+            this.Ws.Location = new System.Drawing.Point(162, 79);
+            this.Ws.Name = "Ws";
+            this.Ws.Size = new System.Drawing.Size(75, 23);
+            this.Ws.TabIndex = 2;
+            this.Ws.Text = "Set WS";
+            this.Ws.UseVisualStyleBackColor = false;
+            this.Ws.Click += new System.EventHandler(this.Ws_Click);
+            // 
+            // FF
+            // 
+            this.FF.BackColor = System.Drawing.SystemColors.MenuText;
+            this.FF.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FF.ForeColor = System.Drawing.SystemColors.Window;
+            this.FF.Location = new System.Drawing.Point(12, 79);
+            this.FF.Name = "FF";
+            this.FF.Size = new System.Drawing.Size(75, 23);
+            this.FF.TabIndex = 1;
+            this.FF.Text = "FF";
+            this.FF.UseVisualStyleBackColor = false;
+            this.FF.Click += new System.EventHandler(this.FF_Click);
+            // 
+            // Btools
+            // 
+            this.Btools.BackColor = System.Drawing.SystemColors.MenuText;
+            this.Btools.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btools.ForeColor = System.Drawing.SystemColors.Window;
+            this.Btools.Location = new System.Drawing.Point(12, 41);
+            this.Btools.Name = "Btools";
+            this.Btools.Size = new System.Drawing.Size(75, 23);
+            this.Btools.TabIndex = 0;
+            this.Btools.Text = "Btools";
+            this.Btools.UseVisualStyleBackColor = false;
+            this.Btools.Click += new System.EventHandler(this.Btools_Click);
             // 
             // LuaC
             // 
@@ -183,7 +319,7 @@
             // 
             this.Inject.BackColor = System.Drawing.SystemColors.MenuText;
             this.Inject.ForeColor = System.Drawing.SystemColors.Window;
-            this.Inject.Location = new System.Drawing.Point(144, 253);
+            this.Inject.Location = new System.Drawing.Point(127, 253);
             this.Inject.Name = "Inject";
             this.Inject.Size = new System.Drawing.Size(75, 23);
             this.Inject.TabIndex = 1;
@@ -191,145 +327,12 @@
             this.Inject.UseVisualStyleBackColor = false;
             this.Inject.Click += new System.EventHandler(this.Inject_Click);
             // 
-            // QuickExe
-            // 
-            this.QuickExe.BackColor = System.Drawing.SystemColors.MenuText;
-            this.QuickExe.Controls.Add(this.JumpPowerValue);
-            this.QuickExe.Controls.Add(this.JP);
-            this.QuickExe.Controls.Add(this.Sit);
-            this.QuickExe.Controls.Add(this.Suicide);
-            this.QuickExe.Controls.Add(this.WalkSpeedValue);
-            this.QuickExe.Controls.Add(this.Ws);
-            this.QuickExe.Controls.Add(this.FF);
-            this.QuickExe.Controls.Add(this.Btools);
-            this.QuickExe.Location = new System.Drawing.Point(4, 22);
-            this.QuickExe.Name = "QuickExe";
-            this.QuickExe.Size = new System.Drawing.Size(252, 211);
-            this.QuickExe.TabIndex = 2;
-            this.QuickExe.Text = "QuickExe";
-            // 
-            // Btools
-            // 
-            this.Btools.BackColor = System.Drawing.SystemColors.MenuText;
-            this.Btools.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btools.ForeColor = System.Drawing.SystemColors.Window;
-            this.Btools.Location = new System.Drawing.Point(12, 41);
-            this.Btools.Name = "Btools";
-            this.Btools.Size = new System.Drawing.Size(75, 23);
-            this.Btools.TabIndex = 0;
-            this.Btools.Text = "Btools";
-            this.Btools.UseVisualStyleBackColor = false;
-            this.Btools.Click += new System.EventHandler(this.Btools_Click);
-            // 
-            // FF
-            // 
-            this.FF.BackColor = System.Drawing.SystemColors.MenuText;
-            this.FF.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FF.ForeColor = System.Drawing.SystemColors.Window;
-            this.FF.Location = new System.Drawing.Point(12, 79);
-            this.FF.Name = "FF";
-            this.FF.Size = new System.Drawing.Size(75, 23);
-            this.FF.TabIndex = 1;
-            this.FF.Text = "FF";
-            this.FF.UseVisualStyleBackColor = false;
-            this.FF.Click += new System.EventHandler(this.FF_Click);
-            // 
-            // Ws
-            // 
-            this.Ws.BackColor = System.Drawing.SystemColors.MenuText;
-            this.Ws.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Ws.ForeColor = System.Drawing.SystemColors.Window;
-            this.Ws.Location = new System.Drawing.Point(162, 79);
-            this.Ws.Name = "Ws";
-            this.Ws.Size = new System.Drawing.Size(75, 23);
-            this.Ws.TabIndex = 2;
-            this.Ws.Text = "Set WS";
-            this.Ws.UseVisualStyleBackColor = false;
-            this.Ws.Click += new System.EventHandler(this.Ws_Click);
-            // 
-            // WalkSpeedValue
-            // 
-            this.WalkSpeedValue.BackColor = System.Drawing.SystemColors.MenuText;
-            this.WalkSpeedValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WalkSpeedValue.ForeColor = System.Drawing.SystemColors.Window;
-            this.WalkSpeedValue.Location = new System.Drawing.Point(162, 41);
-            this.WalkSpeedValue.Maximum = new decimal(new int[] {
-            9999,
-            0,
-            0,
-            0});
-            this.WalkSpeedValue.Name = "WalkSpeedValue";
-            this.WalkSpeedValue.Size = new System.Drawing.Size(75, 20);
-            this.WalkSpeedValue.TabIndex = 3;
-            this.WalkSpeedValue.Value = new decimal(new int[] {
-            16,
-            0,
-            0,
-            0});
-            // 
-            // Suicide
-            // 
-            this.Suicide.BackColor = System.Drawing.SystemColors.MenuText;
-            this.Suicide.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Suicide.ForeColor = System.Drawing.SystemColors.Window;
-            this.Suicide.Location = new System.Drawing.Point(12, 119);
-            this.Suicide.Name = "Suicide";
-            this.Suicide.Size = new System.Drawing.Size(75, 23);
-            this.Suicide.TabIndex = 4;
-            this.Suicide.Text = "Suicide";
-            this.Suicide.UseVisualStyleBackColor = false;
-            this.Suicide.Click += new System.EventHandler(this.Suicide_Click);
-            // 
-            // Sit
-            // 
-            this.Sit.BackColor = System.Drawing.SystemColors.MenuText;
-            this.Sit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Sit.ForeColor = System.Drawing.SystemColors.Window;
-            this.Sit.Location = new System.Drawing.Point(12, 162);
-            this.Sit.Name = "Sit";
-            this.Sit.Size = new System.Drawing.Size(75, 23);
-            this.Sit.TabIndex = 5;
-            this.Sit.Text = "Sit";
-            this.Sit.UseVisualStyleBackColor = false;
-            this.Sit.Click += new System.EventHandler(this.Sit_Click);
-            // 
-            // JP
-            // 
-            this.JP.BackColor = System.Drawing.SystemColors.MenuText;
-            this.JP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.JP.ForeColor = System.Drawing.SystemColors.Window;
-            this.JP.Location = new System.Drawing.Point(162, 162);
-            this.JP.Name = "JP";
-            this.JP.Size = new System.Drawing.Size(75, 23);
-            this.JP.TabIndex = 6;
-            this.JP.Text = "Set JP";
-            this.JP.UseVisualStyleBackColor = false;
-            this.JP.Click += new System.EventHandler(this.JP_Click);
-            // 
-            // JumpPowerValue
-            // 
-            this.JumpPowerValue.BackColor = System.Drawing.SystemColors.MenuText;
-            this.JumpPowerValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.JumpPowerValue.ForeColor = System.Drawing.SystemColors.Window;
-            this.JumpPowerValue.Location = new System.Drawing.Point(162, 122);
-            this.JumpPowerValue.Maximum = new decimal(new int[] {
-            9999,
-            0,
-            0,
-            0});
-            this.JumpPowerValue.Name = "JumpPowerValue";
-            this.JumpPowerValue.Size = new System.Drawing.Size(75, 20);
-            this.JumpPowerValue.TabIndex = 7;
-            this.JumpPowerValue.Value = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
-            // 
             // TopCheck
             // 
             this.TopCheck.AutoSize = true;
             this.TopCheck.BackColor = System.Drawing.SystemColors.MenuText;
+            this.TopCheck.Checked = true;
+            this.TopCheck.CheckState = System.Windows.Forms.CheckState.Checked;
             this.TopCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TopCheck.ForeColor = System.Drawing.SystemColors.Window;
             this.TopCheck.Location = new System.Drawing.Point(12, 257);
@@ -340,27 +343,42 @@
             this.TopCheck.UseVisualStyleBackColor = false;
             this.TopCheck.CheckedChanged += new System.EventHandler(this.TopCheck_CheckedChanged);
             // 
+            // Theme
+            // 
+            this.Theme.BackColor = System.Drawing.SystemColors.MenuText;
+            this.Theme.ForeColor = System.Drawing.SystemColors.Window;
+            this.Theme.Location = new System.Drawing.Point(208, 253);
+            this.Theme.Name = "Theme";
+            this.Theme.Size = new System.Drawing.Size(75, 23);
+            this.Theme.TabIndex = 3;
+            this.Theme.Text = "Theme";
+            this.Theme.UseVisualStyleBackColor = false;
+            this.Theme.Click += new System.EventHandler(this.Theme_Click);
+            // 
             // IceSourceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuText;
             this.ClientSize = new System.Drawing.Size(284, 280);
+            this.Controls.Add(this.Theme);
             this.Controls.Add(this.TopCheck);
             this.Controls.Add(this.Inject);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "IceSourceForm";
             this.ShowIcon = false;
-            this.Text = "Ice Source UI";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Ice Source UI Dark Theme";
             this.tabControl1.ResumeLayout(false);
             this.CMDS.ResumeLayout(false);
             this.CMDS.PerformLayout();
-            this.LuaC.ResumeLayout(false);
             this.QuickExe.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.WalkSpeedValue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.JumpPowerValue)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WalkSpeedValue)).EndInit();
+            this.LuaC.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -389,6 +407,7 @@
         private System.Windows.Forms.NumericUpDown JumpPowerValue;
         private System.Windows.Forms.Button JP;
         private System.Windows.Forms.CheckBox TopCheck;
+        private System.Windows.Forms.Button Theme;
     }
 }
 

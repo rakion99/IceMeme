@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.IO;
 using System.IO.Pipes;
 using System.Runtime.InteropServices;
@@ -12,6 +13,8 @@ namespace IceSourceUI
         public IceSourceForm()
         {
             InitializeComponent();
+            //TopMost Enabled by default
+            TopMost = true;
         }
         //change this strings to your taste
         string exploitdll = "IceSource.dll";//this is the name of your dll
@@ -336,6 +339,45 @@ namespace IceSourceUI
             {
                 TopMost = false;
             }
+        }
+
+        private int thm;
+
+        public void UpdateColorControls(Control theui)
+        {
+            Color Black = Color.FromName("Black");
+            Color White = Color.FromName("White");
+            
+            switch (thm)
+            {
+                case 1:
+                    theui.BackColor = Black;
+                    theui.ForeColor = White;
+                    this.BackColor = Black;
+                    this.Text = "Ice Source UI Dark Theme";
+                    break;
+                case 0:
+                    theui.BackColor = White;
+                    theui.ForeColor = Black;
+                    this.BackColor = White;
+                    this.Text = "Ice Source UI Light Theme";
+                    break;
+            }
+
+            foreach (Control subC in theui.Controls)
+            {
+                UpdateColorControls(subC);
+            }
+        }
+
+        private void Theme_Click(object sender, EventArgs e)
+        {
+            foreach (Control c in this.Controls)
+            {
+                UpdateColorControls(c);
+            }
+            thm++;
+            if (thm > 1) thm = 0;
         }
     }
 }
