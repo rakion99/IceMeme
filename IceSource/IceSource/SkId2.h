@@ -1,10 +1,5 @@
 #pragma once
 
-#include "stdafx.h"
-
-#include "SkId4.h"
-#include "SkId3.h"
-
 using namespace std;
 using namespace Rlua;
 

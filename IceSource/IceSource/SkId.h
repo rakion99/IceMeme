@@ -7,9 +7,9 @@
 #pragma once
 
 #include "stdafx.h"
-
-#include "SkId4.h"
 #include "SkId5.h"
+#include "Skid6.h"
+#include "SkId4.h"
 #include "SkId3.h"
 #include "SkId2.h"
 #include "SkId1.h"
