@@ -5,7 +5,7 @@
 - lua_tolstring – "Unprotected error in call to Lua API (%s)\n” – Pseudocode look for v1 = sub_xxxxxx(a1, -1, 0);
 - lua_settop – "name conflict for module '%s'" – Disassembly view, sub_xxxxxx 1st call
 - lua_toboolean  "%s: %p” –  Pseudocode look for case 3: v6=sub_xxxxxx(a1, 1)
-- lua_pushvalue - "Breakpoint %d condition runtime error: %s" - Psuedocode look for else if (sub_xxxxxx(v5, 0, 1, 0))
+- lua_pushvalue - "__index" - Disassembly First Call
 - lua_pushnumber - "huge" - Pseudocode look for sub_xxxxxx(a1, qword_xxxxxx); above sub_xxxxxx(a1, -2, "huge");
 - lua_pushstring - "The metatable is locked" - Pseudocode look for sub_xxxxxx(a1, "The metatable is locked");
 - lua_pcall - "*** value not found ***" - Pseudocode look for if (sub_xxxxxx(v10, 0, 1, 0))
