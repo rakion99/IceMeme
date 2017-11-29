@@ -3,7 +3,7 @@
 - lua_getfield (With 4 args) – "tostring” – Pseudocode look for sub_xxxxxx(v2, -10002, "tostring”, -1)
 - lua_setfield – "noise” – Pseudocode look for sub_xxxxxx(a1, -2, "noise”)
 - lua_tolstring – "Unprotected error in call to Lua API (%s)\n” – Pseudocode look for v1 = sub_xxxxxx(a1, -1, 0);
-- lua_settop – "Object” – Disassembly view, sub_xxxxxx 1st call before offset of "Object”
+- lua_settop – "name conflict for module '%s'" – Disassembly view, sub_xxxxxx 1st call
 - lua_toboolean  "%s: %p” –  Pseudocode look for case 3: v6=sub_xxxxxx(a1, 1)
 - lua_pushvalue - "Breakpoint %d condition runtime error: %s" - Psuedocode look for else if (sub_xxxxxx(v5, 0, 1, 0))
 - lua_pushnumber - "huge" - Pseudocode look for sub_xxxxxx(a1, qword_xxxxxx); above sub_xxxxxx(a1, -2, "huge");
