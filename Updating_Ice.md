@@ -39,6 +39,7 @@
 - luaV_gettable - "'for' step must be a number" - Pseudocode look for sub_xxxxxx(a3, v326 + 16 * (v14 & 0x1FF), v27, v320, 1); (around lines 443)
 - luaV_settable - "perform arithmetic on" - Pseudocode look for sub_xxxxxx(a3, &v292, v322 + 16 * (v14 & 0x3FFFF), v326 + 16 * (unsigned __int8)(v14 >> 18)); (around lines 452)
 - lua_resume - "too many arguments to resume" - Pseudocode look for v5 = sub_xxxxxx(a2, a3);
+- luastate - "Unable to create a new thread for %s" - look for the definition of v50
 - XORCONS:
 "%s expected, got %s" should appear as v2 = sub_72B570(a1, (int)"%s expected, got %s", (unsigned int)"table");
 Find:
