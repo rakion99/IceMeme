@@ -1,4 +1,4 @@
-# To update Ice, use IDA to find the correct addresses for your needs from this list
+# To update Ice you need to update the addres, use IDA to find the correct addresses for your needs from this list
 ## Guide by Rover656(so ask him if you don't understand)
 - lua_getfield (With 3 args) – "isdst” – Pseudocode look for sub_xxxxxx(a2, -2, "isdst”)
 - lua_getfield (With 4 args) – "tostring” – Pseudocode look for sub_xxxxxx(v2, -10002, "tostring”, -1)
