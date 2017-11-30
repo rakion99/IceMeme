@@ -1,7 +1,7 @@
 #pragma once
 
 using namespace Rlua;
-
+//Split by delimiter
 std::vector<std::string> SkIdT(std::string str, char Delim) {
 	std::vector<std::string> SkIds;
 	std::stringstream skids(str);
@@ -10,7 +10,7 @@ std::vector<std::string> SkIdT(std::string str, char Delim) {
 		SkIds.push_back(SkId);
 	return SkIds;
 }
-
+//Convert string to lowercase
 std::string toSkId(std::string str)
 {
 	std::string reSkId("");
@@ -24,7 +24,7 @@ std::string toSkId(std::string str)
 	}
 	return reSkId;
 }
-
+//Getservice
 void getSKID(std::string service)
 {
 	using namespace Rlua;
@@ -34,14 +34,14 @@ void getSKID(std::string service)
 	SKID_pushSkId(SkidState, service.c_str());
 	SKID_SkId(SkidState, 2, 1);
 }
-
+//Set identity
 int *OPSKIDLeVeL() {
 	int *Level = SKIDLeVeL();
 	if (*Level == 0)
 		*Level = 6;
 	return Level;
 }
-
+//Scan
 void SKID() {
 	SKIDD();
 	OPSKIDLeVeL();
