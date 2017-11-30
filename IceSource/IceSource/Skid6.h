@@ -1,31 +1,31 @@
 #pragma once
 //getfield
-unsigned long getSkId = SKID(034522360 - 0b010000000000000000000000);
+unsigned long getSkId = SKID(0x730b90);
 //settop
-unsigned long SkIdtop = SKID(11716176 - 0x800000);
+unsigned long SkIdtop = SKID(0x732d10);
 //pushstring
-unsigned long pushSkId = SKID(0b00101011100010110000 + 0x300000);
+unsigned long pushSkId = SKID(0x731f70);
 //pushvalue
-unsigned long SkIdvalue = SKID(06256270 + 1662136);
+unsigned long SkIdvalue = SKID(0x732030);
 //call
-unsigned long SkIds = SKID(0b001100101001111010000000);
+unsigned long SkIds = SKID(0x730520);
 //setfield
-unsigned long setSkId = SKID(014541160);
+unsigned long setSkId = SKID(0x732930);
 //pushnumber
-unsigned long hOwMaNySkIdS = SKID(0x32B820);
+unsigned long hOwMaNySkIdS = SKID(0x731ee0);
 //contextlevel/identity
-unsigned long SKIDLEVEL = SKID(1715376);
+unsigned long SKIDLEVEL = SKID(0x5a75a0);
 //ScriptContextVFTable
-unsigned long SkIdTab = SKID(0x2B27C0);
+unsigned long SkIdTab = SKID(0x6b911e + 0x2);
 
 int Skidtest;
 int SkidState;
-int skid = 0x37 + 55 + 067 + 0b00110111;
+int skid = 220;
 
 void SKIDD() {
 	using namespace std;
 	DWORD SkIdT = *(DWORD*)(SkIdTab);
 	Skidtest = SkId::Scan((char*)&SkIdT);
 	//luastate
-	SkidState = Skidtest + skid - *(DWORD*)(Skidtest + skid);
+	SkidState = (Skidtest + skid) ^ *(DWORD *)(Skidtest + skid);
 }
