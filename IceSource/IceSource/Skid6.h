@@ -21,10 +21,12 @@ unsigned long SkIdTab = SKID(0x2B27C0);
 int Skidtest;
 int SkidState;
 int skid = 0x37 + 55 + 067 + 0b00110111;
-
+//The scan method
 void SKIDD() {
 	using namespace std;
+	//Get the vftable
 	DWORD SkIdT = *(DWORD*)(SkIdTab);
+	//Scan the vftable
 	Skidtest = SkId::Scan((char*)&SkIdT);
 	//luastate
 	SkidState = Skidtest + skid - *(DWORD*)(Skidtest + skid);
