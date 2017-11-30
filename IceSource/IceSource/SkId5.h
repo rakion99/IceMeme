@@ -1,7 +1,7 @@
 #pragma once
 
 inline long SKID(long SkId) {
-	return (SkId + (DWORD)GetModuleHandle(0));
+	return (SkId + (DWORD)GetModuleHandle(0) - 0x400000);
 }
 
 namespace SkId {
