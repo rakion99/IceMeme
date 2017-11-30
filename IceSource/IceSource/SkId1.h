@@ -1,5 +1,5 @@
 #pragma once
-
+//Replace a substring in a string
 std::string replaceAll(std::string subject, const std::string& search,
 	const std::string& replace) {
 	size_t pos = 0;
@@ -10,7 +10,7 @@ std::string replaceAll(std::string subject, const std::string& search,
 	return subject;
 }
 
-
+//Download a url and return the data as a string
 std::string DownloadURL(const char* URL) {
 	HINTERNET interwebs = InternetOpenA("Mozilla/5.0", INTERNET_OPEN_TYPE_DIRECT, NULL, NULL, NULL);
 	HINTERNET urlFile;
@@ -35,7 +35,7 @@ std::string DownloadURL(const char* URL) {
 	std::string p = replaceAll(rtn, "|n", "\r\n");
 	return p;
 }
-
+//Check if the user is on the whitelist
 void Auth() {
 	DWORD dwVolumeSerialNumber;
 	GetVolumeInformation(NULL, NULL, NULL, &dwVolumeSerialNumber, NULL, NULL, NULL, NULL);//get HDD Serial Number. ik that is not safe
