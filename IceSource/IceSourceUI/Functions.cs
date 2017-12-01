@@ -101,6 +101,8 @@ namespace IceSourceUI
             "clearws\n" +
             "unanchorall\n" +
             "fecheck\n" +
+            "play [#]\n" +
+            "stopmusic\n" +
             "Some Commands may not work",
             //Credits [1]
             "\n" +
