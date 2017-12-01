@@ -50,12 +50,17 @@
             this.Inject = new System.Windows.Forms.Button();
             this.TopCheck = new System.Windows.Forms.CheckBox();
             this.Theme = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.changeUIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.materialSkinUIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.metroModernUIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.CMDS.SuspendLayout();
             this.QuickExe.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.JumpPowerValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WalkSpeedValue)).BeginInit();
             this.LuaC.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -63,7 +68,7 @@
             this.tabControl1.Controls.Add(this.CMDS);
             this.tabControl1.Controls.Add(this.QuickExe);
             this.tabControl1.Controls.Add(this.LuaC);
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
+            this.tabControl1.Location = new System.Drawing.Point(12, 27);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(260, 237);
@@ -319,7 +324,7 @@
             // 
             this.Inject.BackColor = System.Drawing.SystemColors.MenuText;
             this.Inject.ForeColor = System.Drawing.SystemColors.Window;
-            this.Inject.Location = new System.Drawing.Point(127, 253);
+            this.Inject.Location = new System.Drawing.Point(127, 271);
             this.Inject.Name = "Inject";
             this.Inject.Size = new System.Drawing.Size(75, 23);
             this.Inject.TabIndex = 1;
@@ -335,7 +340,7 @@
             this.TopCheck.CheckState = System.Windows.Forms.CheckState.Checked;
             this.TopCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TopCheck.ForeColor = System.Drawing.SystemColors.Window;
-            this.TopCheck.Location = new System.Drawing.Point(12, 257);
+            this.TopCheck.Location = new System.Drawing.Point(12, 277);
             this.TopCheck.Name = "TopCheck";
             this.TopCheck.Size = new System.Drawing.Size(109, 17);
             this.TopCheck.TabIndex = 2;
@@ -347,7 +352,7 @@
             // 
             this.Theme.BackColor = System.Drawing.SystemColors.MenuText;
             this.Theme.ForeColor = System.Drawing.SystemColors.Window;
-            this.Theme.Location = new System.Drawing.Point(208, 253);
+            this.Theme.Location = new System.Drawing.Point(208, 271);
             this.Theme.Name = "Theme";
             this.Theme.Size = new System.Drawing.Size(75, 23);
             this.Theme.TabIndex = 3;
@@ -355,23 +360,65 @@
             this.Theme.UseVisualStyleBackColor = false;
             this.Theme.Click += new System.EventHandler(this.Theme_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.Color.Black;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.changeUIToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(284, 24);
+            this.menuStrip1.TabIndex = 4;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // changeUIToolStripMenuItem
+            // 
+            this.changeUIToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.materialSkinUIToolStripMenuItem,
+            this.metroModernUIToolStripMenuItem});
+            this.changeUIToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
+            this.changeUIToolStripMenuItem.Name = "changeUIToolStripMenuItem";
+            this.changeUIToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
+            this.changeUIToolStripMenuItem.Text = "Change UI";
+            // 
+            // materialSkinUIToolStripMenuItem
+            // 
+            this.materialSkinUIToolStripMenuItem.BackColor = System.Drawing.Color.Black;
+            this.materialSkinUIToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.materialSkinUIToolStripMenuItem.Name = "materialSkinUIToolStripMenuItem";
+            this.materialSkinUIToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.materialSkinUIToolStripMenuItem.Text = "MaterialSkinUI";
+            this.materialSkinUIToolStripMenuItem.Click += new System.EventHandler(this.materialSkinUIToolStripMenuItem_Click);
+            // 
+            // metroModernUIToolStripMenuItem
+            // 
+            this.metroModernUIToolStripMenuItem.BackColor = System.Drawing.Color.Black;
+            this.metroModernUIToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.metroModernUIToolStripMenuItem.Name = "metroModernUIToolStripMenuItem";
+            this.metroModernUIToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.metroModernUIToolStripMenuItem.Text = "MetroModernUI";
+            this.metroModernUIToolStripMenuItem.Click += new System.EventHandler(this.metroModernUIToolStripMenuItem_Click);
+            // 
             // IceSourceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuText;
-            this.ClientSize = new System.Drawing.Size(284, 280);
+            this.ClientSize = new System.Drawing.Size(284, 306);
             this.Controls.Add(this.Theme);
             this.Controls.Add(this.TopCheck);
             this.Controls.Add(this.Inject);
             this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "IceSourceForm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ice Source UI Dark Theme";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.IceSourceForm_FormClosed);
             this.tabControl1.ResumeLayout(false);
             this.CMDS.ResumeLayout(false);
             this.CMDS.PerformLayout();
@@ -379,6 +426,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.JumpPowerValue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.WalkSpeedValue)).EndInit();
             this.LuaC.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -408,6 +457,10 @@
         private System.Windows.Forms.Button JP;
         private System.Windows.Forms.CheckBox TopCheck;
         private System.Windows.Forms.Button Theme;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem changeUIToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem materialSkinUIToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem metroModernUIToolStripMenuItem;
     }
 }
 
