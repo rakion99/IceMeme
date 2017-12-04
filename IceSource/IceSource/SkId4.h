@@ -106,6 +106,8 @@ namespace Rlua {
 	Lua_SkIdvalue SKID_SkIdvalue = (Lua_SkIdvalue)SkidCheck(SkIdvalue);
 	typedef int(__cdecl *Lua_SkId)(RSkidState lst, int nargs, int nresults);
 	Lua_SkId SKID_SkId = (Lua_SkId)SkidCheck(SkIds);
+	typedef int(__cdecl *Lua_getSkIdtable)(RSkidState lst, int objectidx);
+	Lua_getSkIdtable SKID_getSkIdtable = (Lua_getSkIdtable)SkidCheck(getSkIdtable);
 	typedef void(__cdecl *Lua_setSkId)(RSkidState lst, int index, const char *k);
 	Lua_setSkId SKID_setSkId = (Lua_setSkId)SkidCheck(setSkId);
 	typedef void(__cdecl *Lua_hOwMaNySkIdS)(RSkidState lst, double n);
