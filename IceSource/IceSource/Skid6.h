@@ -13,6 +13,8 @@ unsigned long SkIds = SKID(0x5DAFCB);
 unsigned long setSkId = SKID(0x5DD3DB);
 //pushnumber
 unsigned long hOwMaNySkIdS = SKID(0x5DC98B);
+//getmetatable
+unsigned long getSkIdtable = SKID(0x732E80);
 //contextlevel/identity
 unsigned long SKIDLEVEL = SKID(0x45204B);
 //ScriptContextVFTable
