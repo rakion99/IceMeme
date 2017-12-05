@@ -4,6 +4,7 @@ typedef int(RSkidState);
 
 #define LUA_GLOBALSKID -10002
 #define SKID_globalSkId(l,g)			 Rlua::SKID_getSkId(l, LUA_GLOBALSKID, g)
+#define SKID_popSkId(L,n)		SKID_SkIdtop(L, -(n)-1)
 
 DWORD SkidCheck(DWORD skider)
 {
@@ -96,6 +97,22 @@ DWORD SkidCheck(DWORD skider)
 }
 
 namespace Rlua {
+	unsigned int PENV = 0x72A2E7;
+	void set_jz()
+	{
+		DWORD o_buff;
+		VirtualProtect((void*)PENV, 5, PAGE_EXECUTE_READWRITE, &o_buff);
+		*(char*)PENV = 0x74; //opcode for jz
+		VirtualProtect((void*)PENV, 5, o_buff, &o_buff);
+	}
+	void set_jnz()
+	{
+		DWORD o_buff;
+		VirtualProtect((void*)PENV, 5, PAGE_EXECUTE_READWRITE, &o_buff);
+		*(char*)PENV = 0x75; //op_code for jnz. 
+		VirtualProtect((void*)PENV, 5, o_buff, &o_buff);
+	}
+	
 	typedef void(__cdecl *Lua_getSkId)(RSkidState lst, int index, const char *k);
 	Lua_getSkId SKID_getSkId = (Lua_getSkId)SkidCheck(getSkId);
 	typedef void(__cdecl *Lua_SkIdtop)(RSkidState lst, int index);
@@ -106,8 +123,35 @@ namespace Rlua {
 	Lua_SkIdvalue SKID_SkIdvalue = (Lua_SkIdvalue)SkidCheck(SkIdvalue);
 	typedef int(__cdecl *Lua_SkId)(RSkidState lst, int nargs, int nresults);
 	Lua_SkId SKID_SkId = (Lua_SkId)SkidCheck(SkIds);
+	typedef int(__cdecl *Lua_SkId)(RSkidState lst, int nargs, int nresults, int errfunc);
+	int SKID_PSkId(RSkidState lst, int nargs, int nresults, int errfunc)
+	{
+		set_jnz();
+		Lua_SkId PCALL = (Lua_SkId)SkidCheck(PSkIds);
+		set_jz();
+	}
+	typedef int(__cdecl *Lua_getSkIdtable)(RSkidState lst, int objectidx);
+	Lua_getSkIdtable SKID_getSkIdtable = (Lua_getSkIdtable)SkidCheck(getSkIdtable);
 	typedef void(__cdecl *Lua_setSkId)(RSkidState lst, int index, const char *k);
-	Lua_setSkId SKID_setSkId = (Lua_setSkId)SkidCheck(setSkId);
+	void SKID_setSkId(RSkidState lst, int index, const char *k)
+	{
+		SKID_SkIdvalue(lst, index);
+		if (SKID_getSkIdtable(lst, -1))
+		{
+			SKID_getSkId(lst, -1, "__newindex");
+			SKID_SkIdvalue(lst, -3);
+			SKID_pushSkId(lst, k);
+			SKID_SkIdvalue(lst, -6);
+			SKID_PSkId(lst, 3, 0, 0);
+			SKID_popSkId(lst, 3);
+		}
+		else
+		{
+			SKID_popSkId(lst, 1);
+			Lua_setSkId setfield = (Lua_setSkId)SkidCheck(setSkId);
+			setfield(lst, index, k);
+		}
+	}
 	typedef void(__cdecl *Lua_hOwMaNySkIdS)(RSkidState lst, double n);
 	Lua_hOwMaNySkIdS SKID_hOwMaNySkIdS = (Lua_hOwMaNySkIdS)SkidCheck(hOwMaNySkIdS);
 	typedef int*(__cdecl *SKIDLeVEL)();
