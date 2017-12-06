@@ -1,10 +1,11 @@
 #pragma once
 
 typedef int(RSkidState);
-
+//Globals index
 #define LUA_GLOBALSKID -10002
+//Getglobal
 #define SKID_globalSkId(l,g)			 Rlua::SKID_getSkId(l, LUA_GLOBALSKID, g)
-
+//Retcheck
 DWORD SkidCheck(DWORD skider)
 {
 	BYTE* tskider = (BYTE*)skider;
@@ -94,22 +95,30 @@ DWORD SkidCheck(DWORD skider)
 
 	return (DWORD)nSkid;
 }
-
+//Roblox lua
 namespace Rlua {
+	//Getfield
 	typedef void(__cdecl *Lua_getSkId)(RSkidState lst, int index, const char *k);
 	Lua_getSkId SKID_getSkId = (Lua_getSkId)SkidCheck(getSkId);
+	//settop
 	typedef void(__cdecl *Lua_SkIdtop)(RSkidState lst, int index);
 	Lua_SkIdtop SKID_SkIdtop = (Lua_SkIdtop)SkidCheck(SkIdtop);
+	//pushstring
 	typedef void(__cdecl *Lua_pushSkId)(RSkidState lst, const char *s);
 	Lua_pushSkId SKID_pushSkId = (Lua_pushSkId)pushSkId;
+	//pushvalue
 	typedef void(__cdecl *Lua_SkIdvalue)(RSkidState lst, int index);
 	Lua_SkIdvalue SKID_SkIdvalue = (Lua_SkIdvalue)SkidCheck(SkIdvalue);
+	//call
 	typedef int(__cdecl *Lua_SkId)(RSkidState lst, int nargs, int nresults);
 	Lua_SkId SKID_SkId = (Lua_SkId)SkidCheck(SkIds);
+	//setfield
 	typedef void(__cdecl *Lua_setSkId)(RSkidState lst, int index, const char *k);
 	Lua_setSkId SKID_setSkId = (Lua_setSkId)SkidCheck(setSkId);
+	//pushnumber
 	typedef void(__cdecl *Lua_hOwMaNySkIdS)(RSkidState lst, double n);
 	Lua_hOwMaNySkIdS SKID_hOwMaNySkIdS = (Lua_hOwMaNySkIdS)SkidCheck(hOwMaNySkIdS);
+	//context identity
 	typedef int*(__cdecl *SKIDLeVEL)();
 	SKIDLeVEL SKIDLeVeL = (SKIDLeVEL)SKIDLEVEL;
 }

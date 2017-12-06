@@ -21,7 +21,7 @@ unsigned long SkIdTab = SKID(0x563BC9);
 int Skidtest;
 int SkidState;
 int skid = 0x37 + 55 + 067 + 0b00110111;
-
+//The scan method
 void SKIDD() {
 	using namespace std;
 	DWORD SkIdT = *(DWORD*)(SkIdTab + 0x2);

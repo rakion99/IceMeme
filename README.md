@@ -16,4 +16,4 @@
 # TODO LIST:              
 - [x] **UI with named pipes**
 - [x] **Injector**
-- [ ] **Add comments to the source**
+- [x] **Add comments to the source**

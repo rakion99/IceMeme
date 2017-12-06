@@ -1,10 +1,15 @@
 #pragma once
-
+//Get address
 inline long SKID(long SkId) {
 	return (0x155555 + SkId - 1398101 - 0b000101010101010101010101 + (DWORD)GetModuleHandle(0) - 05252525 - 0x1);
 }
-
+//Get address (Use this if you use the #addys channel or find them yourself)
+inline long SKIDAddr(long SkId) {
+	return (SkId + (DWORD)GetModuleHandle(0) - 0x400000);
+}
+//Memory
 namespace SkId {
+  //Compare addresses
 	bool Skidpare(const char* pskid, const char* bskid, const char* szskid)
 	{
 		while (*szskid) {
@@ -15,7 +20,7 @@ namespace SkId {
 		}
 		return 1;
 	}
-
+  //Scan VFTable
 	DWORD ScanforSkid(const char* vfskid)
 	{
 		MEMORY_BASIC_INFORMATION SKIDI = { 0 };
@@ -39,4 +44,5 @@ namespace SkId {
 		} while (StartSkId < EndSkId);
 			return 0;
 	}
+}
 }

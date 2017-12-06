@@ -2,7 +2,7 @@
 
 using namespace std;
 using namespace Rlua;
-
+//Execute command (It is super simple to add commands, just rewrite the script using the methods)
 void ExecuteSkId(std::string cmd) {
 	std::vector<std::string> In = SkIdT(cmd, ' ');
 	if (In.size() != 0) {
@@ -1906,7 +1906,7 @@ void ExecuteSkId(std::string cmd) {
 		return;
 	}
 }
-
+//Split the string by spaces
 std::vector<std::string> LuaCSplit(std::string s)
 {
 	std::vector<std::string> elems;
@@ -1916,7 +1916,7 @@ std::vector<std::string> LuaCSplit(std::string s)
 	std::vector<std::string> vstrings(begin, end);
 	return vstrings;
 }
-
+//Handle LuaC input and execute
 void SkIdC(std::string input) {
 	try {
 		std::vector<std::string> In = LuaCSplit(input);
