@@ -38,7 +38,7 @@ void getSKID(std::string service)
 int *OPSKIDLeVeL() {
 	int *Level = SKIDLeVeL();
 	if (*Level == 0)
-		*Level = 6;
+		*Level = 69;
 	return Level;
 }
 //Scan

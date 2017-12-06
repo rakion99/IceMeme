@@ -16,7 +16,7 @@ namespace IceSourceUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new IceSourceForm());
+            Application.Run(new Start());
         }
     }
 }

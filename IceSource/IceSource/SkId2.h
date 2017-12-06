@@ -1861,6 +1861,44 @@ void ExecuteSkId(std::string cmd) {
 			SKID_SkId(SkidState, 1, 0);;
 		}
 
+		if (toSkId(In.at(0)) == "play") {
+			SKID_globalSkId(SkidState, "Workspace");
+			SKID_globalSkId(SkidState, "Instance");
+			SKID_getSkId(SkidState, -1, "new");
+			SKID_pushSkId(SkidState, "Sound");
+			SKID_SkIdvalue(SkidState, -4);
+			SKID_SkId(SkidState, 2, 0);;
+
+			SKID_globalSkId(SkidState, "Workspace");
+			SKID_getSkId(SkidState, -1, "Sound");
+			SKID_pushSkId(SkidState, "LuaC_Music");
+			SKID_setSkId(SkidState, -2, "Name");
+
+			SKID_globalSkId(SkidState, "Workspace");
+			SKID_getSkId(SkidState, -1, "LuaC_Music");
+			SKID_hOwMaNySkIdS(SkidState, 1);
+			SKID_setSkId(SkidState, -2, "Volume");
+
+			SKID_globalSkId(SkidState, "Workspace");
+			SKID_getSkId(SkidState, -1, "LuaC_Music");
+			SKID_pushSkId(SkidState, ("rbxassetid://" + In.at(1)).c_str());
+			SKID_setSkId(SkidState, -2, "SoundId");
+
+			SKID_globalSkId(SkidState, "Workspace");
+			SKID_getSkId(SkidState, -1, "LuaC_Music");
+			SKID_getSkId(SkidState, -1, "Play");
+			SKID_SkIdvalue(SkidState, -2);
+			SKID_SkId(SkidState, 1, 0);;
+		}
+
+		if (toSkId(In.at(0)) == "stopmusic") {
+			SKID_globalSkId(SkidState, "Workspace");
+			SKID_getSkId(SkidState, -1, "LuaC_Music");
+			SKID_getSkId(SkidState, -1, "Destroy");
+			SKID_SkIdvalue(SkidState, -2);
+			SKID_SkId(SkidState, 1, 0);;
+		}
+
 		SKID_SkIdtop(SkidState, 0);
 	}
 	else
