@@ -87,7 +87,7 @@ namespace IceMemeUI
                     using (NamedPipeClientStream namedPipeClientStream = new NamedPipeClientStream(".", scriptpipe, PipeDirection.Out))
                     {
                         namedPipeClientStream.Connect();
-                        using (StreamWriter streamWriter = new StreamWriter(namedPipeClientStream))
+                        using (StreamWriter streamWriter = new StreamWriter(namedPipeClientStream, System.Text.Encoding.Default, 999999))//changed buffer to max 1mb since default buffer is 1kb
                         {
                             streamWriter.Write(script);
                             streamWriter.Dispose();
@@ -121,7 +121,7 @@ namespace IceMemeUI
                     using (NamedPipeClientStream namedPipeClientStream = new NamedPipeClientStream(".", luapipe, PipeDirection.Out))
                     {
                         namedPipeClientStream.Connect();
-                        using (StreamWriter streamWriter = new StreamWriter(namedPipeClientStream))
+                        using (StreamWriter streamWriter = new StreamWriter(namedPipeClientStream, System.Text.Encoding.Default, 999999))//changed buffer to max 1mb since default buffer is 1kb
                         {
                             streamWriter.Write(script);
                             streamWriter.Dispose();

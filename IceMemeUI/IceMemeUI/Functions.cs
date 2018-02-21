@@ -103,6 +103,8 @@ namespace IceMemeUI
             "Credits:\n" +
             "rakion99\n" +
             "Roblox\n" +
+            "Jayden\n" +
+            "louka for danghui\n" +
             "Africaus for pcall bypass\n" +
             "VOID for getobjects\n" +
             "tepig for Memehax\n" +
@@ -110,6 +112,7 @@ namespace IceMemeUI
             "Eternal for RetCheck\n" +
             "AutisticBobby\n" +
             "Powered by Lua\n" +
+            "Powered by cURL\n" +
             "ICE By: Josh() and Cosmology"
         };
 

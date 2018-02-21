@@ -60,6 +60,7 @@ namespace IceMemeUI
             else
             {
                 NamedPipes.CommandPipe(CmdTextBox.Text);//command pipe function to send the text in the command textbox
+                CmdBox.AppendText(">" + CmdTextBox.Text);
                 CmdTextBox.Clear();//clear the command textbox
             }
         }
