@@ -49,8 +49,10 @@ namespace IceMemeUI
         {
             if (NamedPipeExist(cmdpipe))
             {
-                try
+                new System.Threading.Thread(() =>//lets run this in another thread so if roblox crash the ui/gui don't freeze or something
                 {
+                    try
+                    {
                     using (NamedPipeClientStream namedPipeClientStream = new NamedPipeClientStream(".", cmdpipe, PipeDirection.Out))
                     {
                         namedPipeClientStream.Connect();
@@ -61,7 +63,7 @@ namespace IceMemeUI
                         }
                         namedPipeClientStream.Dispose();
                     }
-                }
+                    }
                 catch (IOException)
                 {
                     MessageBox.Show("Error occured connecting to the pipe.", "Connection Failed!", MessageBoxButtons.OK, MessageBoxIcon.Hand);
@@ -70,6 +72,7 @@ namespace IceMemeUI
                 {
                     MessageBox.Show(ex.Message.ToString());
                 }
+                }).Start();
             }
             else
             {

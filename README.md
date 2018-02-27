@@ -6,18 +6,24 @@
 [Click Here to go to the latest release](https://github.com/rakion99/IceSource/releases/latest)
 
 
-
-# NOTE: You need to know C++(for the dll/Exploit), C# for external Ui/Gui and how to use Ida(Interactive DisAssembler) for the address and other stuff
-# If you only join to ask how to build the dll, how to fix common and simple errors you will be ignored or just called SKID 
-
-# Make sure you are compiling/Building it in Release x86 and not in x64 and/or Debug or you will have errors
-
-![](https://i.imgur.com/rAER3e5.png)
-
-
 # Features:
 
-## Lua C:
+## Tested and Working in Windows 7 32 bits and Windows 10 64 bits
+
+###NEW Feature:
+####Now you can change the tittle and toolbar Exploit name with only changing the dll name
+
+* Fast Scanning
+* Windows 7 32 bits support
+* Stable
+* Very Fast Updates
+* Update Checker
+* Simple Windows Forms UI/Gui
+* Click TP
+* GetObjects(only Insert Model ID so its not in Limited Lua for now)
+* Works in Non-FE Games
+
+## Lua C Support:
 
 * getglobal
 * getfield
@@ -35,9 +41,17 @@
 * wait(maybe will work maybe not)
 * emptystack
 
-## Lua:
+## Limited Lua Support:
 
 * idk :P only tested simple scripts
+
+
+# NOTE: You need to know C++(for the dll), C# for external Ui/Gui and how to use Ida(Interactive DisAssembler) for the address and other stuff
+# If you only join to ask how to build the dll, how to fix common and simple errors you will be ignored or just called SKID 
+
+# Make sure you are compiling/Building it in Release x86 and not in x64 and/or Debug or you will have errors
+
+![](https://i.imgur.com/rAER3e5.png)
 
 # Credits:
 ## rakion99 for updating and improving this :wink:(I made a Discord Server if you want to join or not [IcE StUfF HeLp](https://discord.gg/K2A2Xhv "Click to join"))
