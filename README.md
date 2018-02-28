@@ -10,8 +10,9 @@
 
 ## Tested and Working in Windows 7 32 bits and Windows 10 64 bits
 
-###NEW Feature:
-####Now you can change the tittle and toolbar Exploit name with only changing the dll name
+### NEW Feature:
+
+#### Now you can change the tittle and toolbar Exploit name with only changing the dll name
 
 * Fast Scanning
 * Windows 7 32 bits support
