@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("IceMemeUI")]
 [assembly: AssemblyDescription("IceMeme UI for exploit IceMeme")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("idk")]
+[assembly: AssemblyCompany("rakion99")]
 [assembly: AssemblyProduct("IceMemeUI")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("Trademark ™ 2018")]

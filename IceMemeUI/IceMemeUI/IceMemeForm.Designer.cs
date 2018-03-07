@@ -35,7 +35,7 @@
             this.CmdBox = new System.Windows.Forms.RichTextBox();
             this.Send = new System.Windows.Forms.Button();
             this.CmdTextBox = new System.Windows.Forms.TextBox();
-            this.QuickExe = new System.Windows.Forms.TabPage();
+            this.QuickCmds = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
             this.InsertBtn = new System.Windows.Forms.Button();
             this.ModelID = new System.Windows.Forms.TextBox();
@@ -66,6 +66,17 @@
             this.Openlua = new System.Windows.Forms.Button();
             this.LuaBox = new FastColoredTextBoxNS.FastColoredTextBox();
             this.Extras = new System.Windows.Forms.TabPage();
+            this.CheckUpdatesBox = new System.Windows.Forms.CheckBox();
+            this.LuaBSODBtn = new System.Windows.Forms.Button();
+            this.LuaWSJPBtn = new System.Windows.Forms.Button();
+            this.LuaCDKitBtn = new System.Windows.Forms.Button();
+            this.LuaCIlluminatiBtn = new System.Windows.Forms.Button();
+            this.LuaCNightBtn = new System.Windows.Forms.Button();
+            this.LuaCDayBtn = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.PrintLuaBtn = new System.Windows.Forms.Button();
+            this.PrintLuaCBtn = new System.Windows.Forms.Button();
             this.ClickTpCheckBox = new System.Windows.Forms.CheckBox();
             this.Credits = new System.Windows.Forms.Button();
             this.KillR = new System.Windows.Forms.Button();
@@ -75,9 +86,11 @@
             this.CheckerTimer = new System.Windows.Forms.Timer(this.components);
             this.InjectStatus = new System.Windows.Forms.Label();
             this.SiteLabel = new System.Windows.Forms.LinkLabel();
+            this.OpacityBar = new System.Windows.Forms.TrackBar();
+            this.label4 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.CMDS.SuspendLayout();
-            this.QuickExe.SuspendLayout();
+            this.QuickCmds.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.JumpPowerValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WalkSpeedValue)).BeginInit();
             this.LuaC.SuspendLayout();
@@ -85,12 +98,13 @@
             this.Lua.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LuaBox)).BeginInit();
             this.Extras.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.OpacityBar)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.CMDS);
-            this.tabControl1.Controls.Add(this.QuickExe);
+            this.tabControl1.Controls.Add(this.QuickCmds);
             this.tabControl1.Controls.Add(this.LuaC);
             this.tabControl1.Controls.Add(this.Lua);
             this.tabControl1.Controls.Add(this.Extras);
@@ -154,29 +168,29 @@
             this.CmdTextBox.TabIndex = 0;
             this.CmdTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CmdTextBox_KeyDown);
             // 
-            // QuickExe
+            // QuickCmds
             // 
-            this.QuickExe.BackColor = System.Drawing.SystemColors.MenuText;
-            this.QuickExe.Controls.Add(this.label1);
-            this.QuickExe.Controls.Add(this.InsertBtn);
-            this.QuickExe.Controls.Add(this.ModelID);
-            this.QuickExe.Controls.Add(this.BILLNYE);
-            this.QuickExe.Controls.Add(this.CRINGE);
-            this.QuickExe.Controls.Add(this.Rickrolll);
-            this.QuickExe.Controls.Add(this.PPAP);
-            this.QuickExe.Controls.Add(this.JumpPowerValue);
-            this.QuickExe.Controls.Add(this.JP);
-            this.QuickExe.Controls.Add(this.Sit);
-            this.QuickExe.Controls.Add(this.Suicide);
-            this.QuickExe.Controls.Add(this.WalkSpeedValue);
-            this.QuickExe.Controls.Add(this.Ws);
-            this.QuickExe.Controls.Add(this.FF);
-            this.QuickExe.Controls.Add(this.Btools);
-            this.QuickExe.Location = new System.Drawing.Point(4, 29);
-            this.QuickExe.Name = "QuickExe";
-            this.QuickExe.Size = new System.Drawing.Size(444, 219);
-            this.QuickExe.TabIndex = 2;
-            this.QuickExe.Text = "QuickExe";
+            this.QuickCmds.BackColor = System.Drawing.SystemColors.MenuText;
+            this.QuickCmds.Controls.Add(this.label1);
+            this.QuickCmds.Controls.Add(this.InsertBtn);
+            this.QuickCmds.Controls.Add(this.ModelID);
+            this.QuickCmds.Controls.Add(this.BILLNYE);
+            this.QuickCmds.Controls.Add(this.CRINGE);
+            this.QuickCmds.Controls.Add(this.Rickrolll);
+            this.QuickCmds.Controls.Add(this.PPAP);
+            this.QuickCmds.Controls.Add(this.JumpPowerValue);
+            this.QuickCmds.Controls.Add(this.JP);
+            this.QuickCmds.Controls.Add(this.Sit);
+            this.QuickCmds.Controls.Add(this.Suicide);
+            this.QuickCmds.Controls.Add(this.WalkSpeedValue);
+            this.QuickCmds.Controls.Add(this.Ws);
+            this.QuickCmds.Controls.Add(this.FF);
+            this.QuickCmds.Controls.Add(this.Btools);
+            this.QuickCmds.Location = new System.Drawing.Point(4, 29);
+            this.QuickCmds.Name = "QuickCmds";
+            this.QuickCmds.Size = new System.Drawing.Size(444, 219);
+            this.QuickCmds.TabIndex = 2;
+            this.QuickCmds.Text = "QuickCmds";
             // 
             // label1
             // 
@@ -446,6 +460,7 @@
             this.LuaCBox.CommentPrefix = "--";
             this.LuaCBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.LuaCBox.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.LuaCBox.Font = new System.Drawing.Font("Courier New", 9.75F);
             this.LuaCBox.IsReplaceMode = false;
             this.LuaCBox.Language = FastColoredTextBoxNS.Language.Lua;
             this.LuaCBox.LeftBracket = '(';
@@ -603,7 +618,6 @@
             this.LuaBox.CommentPrefix = "--";
             this.LuaBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.LuaBox.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.LuaBox.Font = new System.Drawing.Font("Courier New", 9.75F);
             this.LuaBox.IsReplaceMode = false;
             this.LuaBox.Language = FastColoredTextBoxNS.Language.Lua;
             this.LuaBox.LeftBracket = '(';
@@ -623,6 +637,17 @@
             // Extras
             // 
             this.Extras.BackColor = System.Drawing.SystemColors.MenuText;
+            this.Extras.Controls.Add(this.CheckUpdatesBox);
+            this.Extras.Controls.Add(this.LuaBSODBtn);
+            this.Extras.Controls.Add(this.LuaWSJPBtn);
+            this.Extras.Controls.Add(this.LuaCDKitBtn);
+            this.Extras.Controls.Add(this.LuaCIlluminatiBtn);
+            this.Extras.Controls.Add(this.LuaCNightBtn);
+            this.Extras.Controls.Add(this.LuaCDayBtn);
+            this.Extras.Controls.Add(this.label3);
+            this.Extras.Controls.Add(this.label2);
+            this.Extras.Controls.Add(this.PrintLuaBtn);
+            this.Extras.Controls.Add(this.PrintLuaCBtn);
             this.Extras.Controls.Add(this.ClickTpCheckBox);
             this.Extras.Controls.Add(this.Credits);
             this.Extras.Controls.Add(this.KillR);
@@ -631,6 +656,148 @@
             this.Extras.Size = new System.Drawing.Size(444, 219);
             this.Extras.TabIndex = 4;
             this.Extras.Text = "Extras";
+            // 
+            // CheckUpdatesBox
+            // 
+            this.CheckUpdatesBox.AutoSize = true;
+            this.CheckUpdatesBox.BackColor = System.Drawing.SystemColors.MenuText;
+            this.CheckUpdatesBox.Checked = true;
+            this.CheckUpdatesBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.CheckUpdatesBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CheckUpdatesBox.ForeColor = System.Drawing.SystemColors.Window;
+            this.CheckUpdatesBox.Location = new System.Drawing.Point(21, 190);
+            this.CheckUpdatesBox.Name = "CheckUpdatesBox";
+            this.CheckUpdatesBox.Size = new System.Drawing.Size(113, 17);
+            this.CheckUpdatesBox.TabIndex = 17;
+            this.CheckUpdatesBox.Text = "Check Updates";
+            this.CheckUpdatesBox.UseVisualStyleBackColor = false;
+            this.CheckUpdatesBox.CheckedChanged += new System.EventHandler(this.CheckUpdatesBox_CheckedChanged);
+            // 
+            // LuaBSODBtn
+            // 
+            this.LuaBSODBtn.BackColor = System.Drawing.SystemColors.MenuText;
+            this.LuaBSODBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LuaBSODBtn.ForeColor = System.Drawing.SystemColors.Window;
+            this.LuaBSODBtn.Location = new System.Drawing.Point(183, 121);
+            this.LuaBSODBtn.Name = "LuaBSODBtn";
+            this.LuaBSODBtn.Size = new System.Drawing.Size(75, 23);
+            this.LuaBSODBtn.TabIndex = 16;
+            this.LuaBSODBtn.Text = "BSOD";
+            this.LuaBSODBtn.UseVisualStyleBackColor = false;
+            this.LuaBSODBtn.Click += new System.EventHandler(this.LuaBSODBtn_Click);
+            // 
+            // LuaWSJPBtn
+            // 
+            this.LuaWSJPBtn.BackColor = System.Drawing.SystemColors.MenuText;
+            this.LuaWSJPBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LuaWSJPBtn.ForeColor = System.Drawing.SystemColors.Window;
+            this.LuaWSJPBtn.Location = new System.Drawing.Point(102, 121);
+            this.LuaWSJPBtn.Name = "LuaWSJPBtn";
+            this.LuaWSJPBtn.Size = new System.Drawing.Size(75, 23);
+            this.LuaWSJPBtn.TabIndex = 15;
+            this.LuaWSJPBtn.Text = "WSJP";
+            this.LuaWSJPBtn.UseVisualStyleBackColor = false;
+            this.LuaWSJPBtn.Click += new System.EventHandler(this.LuaWSJPBtn_Click);
+            // 
+            // LuaCDKitBtn
+            // 
+            this.LuaCDKitBtn.BackColor = System.Drawing.SystemColors.MenuText;
+            this.LuaCDKitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LuaCDKitBtn.ForeColor = System.Drawing.SystemColors.Window;
+            this.LuaCDKitBtn.Location = new System.Drawing.Point(345, 69);
+            this.LuaCDKitBtn.Name = "LuaCDKitBtn";
+            this.LuaCDKitBtn.Size = new System.Drawing.Size(75, 23);
+            this.LuaCDKitBtn.TabIndex = 14;
+            this.LuaCDKitBtn.Text = "D KIt";
+            this.LuaCDKitBtn.UseVisualStyleBackColor = false;
+            this.LuaCDKitBtn.Click += new System.EventHandler(this.LuaCDKitBtn_Click);
+            // 
+            // LuaCIlluminatiBtn
+            // 
+            this.LuaCIlluminatiBtn.BackColor = System.Drawing.SystemColors.MenuText;
+            this.LuaCIlluminatiBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LuaCIlluminatiBtn.ForeColor = System.Drawing.SystemColors.Window;
+            this.LuaCIlluminatiBtn.Location = new System.Drawing.Point(264, 69);
+            this.LuaCIlluminatiBtn.Name = "LuaCIlluminatiBtn";
+            this.LuaCIlluminatiBtn.Size = new System.Drawing.Size(75, 23);
+            this.LuaCIlluminatiBtn.TabIndex = 13;
+            this.LuaCIlluminatiBtn.Text = "Illuminati";
+            this.LuaCIlluminatiBtn.UseVisualStyleBackColor = false;
+            this.LuaCIlluminatiBtn.Click += new System.EventHandler(this.LuaCIlluminatiBtn_Click);
+            // 
+            // LuaCNightBtn
+            // 
+            this.LuaCNightBtn.BackColor = System.Drawing.SystemColors.MenuText;
+            this.LuaCNightBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LuaCNightBtn.ForeColor = System.Drawing.SystemColors.Window;
+            this.LuaCNightBtn.Location = new System.Drawing.Point(183, 69);
+            this.LuaCNightBtn.Name = "LuaCNightBtn";
+            this.LuaCNightBtn.Size = new System.Drawing.Size(75, 23);
+            this.LuaCNightBtn.TabIndex = 12;
+            this.LuaCNightBtn.Text = "Night";
+            this.LuaCNightBtn.UseVisualStyleBackColor = false;
+            this.LuaCNightBtn.Click += new System.EventHandler(this.LuaCNightBtn_Click);
+            // 
+            // LuaCDayBtn
+            // 
+            this.LuaCDayBtn.BackColor = System.Drawing.SystemColors.MenuText;
+            this.LuaCDayBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LuaCDayBtn.ForeColor = System.Drawing.SystemColors.Window;
+            this.LuaCDayBtn.Location = new System.Drawing.Point(102, 69);
+            this.LuaCDayBtn.Name = "LuaCDayBtn";
+            this.LuaCDayBtn.Size = new System.Drawing.Size(75, 23);
+            this.LuaCDayBtn.TabIndex = 11;
+            this.LuaCDayBtn.Text = "Day";
+            this.LuaCDayBtn.UseVisualStyleBackColor = false;
+            this.LuaCDayBtn.Click += new System.EventHandler(this.LuaCDayBtn_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Jing Jing", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.Window;
+            this.label3.Location = new System.Drawing.Point(21, 100);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(388, 18);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "----------------------Lua Quick Exe----------------------";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Jing Jing", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Window;
+            this.label2.Location = new System.Drawing.Point(18, 48);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(402, 18);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "----------------------Lua C Quick Exe----------------------";
+            // 
+            // PrintLuaBtn
+            // 
+            this.PrintLuaBtn.BackColor = System.Drawing.SystemColors.MenuText;
+            this.PrintLuaBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PrintLuaBtn.ForeColor = System.Drawing.SystemColors.Window;
+            this.PrintLuaBtn.Location = new System.Drawing.Point(21, 121);
+            this.PrintLuaBtn.Name = "PrintLuaBtn";
+            this.PrintLuaBtn.Size = new System.Drawing.Size(75, 23);
+            this.PrintLuaBtn.TabIndex = 8;
+            this.PrintLuaBtn.Text = "PrintLua";
+            this.PrintLuaBtn.UseVisualStyleBackColor = false;
+            this.PrintLuaBtn.Click += new System.EventHandler(this.PrintLuaBtn_Click);
+            // 
+            // PrintLuaCBtn
+            // 
+            this.PrintLuaCBtn.BackColor = System.Drawing.SystemColors.MenuText;
+            this.PrintLuaCBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PrintLuaCBtn.ForeColor = System.Drawing.SystemColors.Window;
+            this.PrintLuaCBtn.Location = new System.Drawing.Point(21, 69);
+            this.PrintLuaCBtn.Name = "PrintLuaCBtn";
+            this.PrintLuaCBtn.Size = new System.Drawing.Size(75, 23);
+            this.PrintLuaCBtn.TabIndex = 7;
+            this.PrintLuaCBtn.Text = "PrintLuac";
+            this.PrintLuaCBtn.UseVisualStyleBackColor = false;
+            this.PrintLuaCBtn.Click += new System.EventHandler(this.PrintLuaCBtn_Click);
             // 
             // ClickTpCheckBox
             // 
@@ -735,7 +902,7 @@
             this.SiteLabel.AutoSize = true;
             this.SiteLabel.Font = new System.Drawing.Font("Jing Jing", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SiteLabel.LinkColor = System.Drawing.Color.Red;
-            this.SiteLabel.Location = new System.Drawing.Point(91, 298);
+            this.SiteLabel.Location = new System.Drawing.Point(19, 298);
             this.SiteLabel.Name = "SiteLabel";
             this.SiteLabel.Size = new System.Drawing.Size(291, 15);
             this.SiteLabel.TabIndex = 5;
@@ -744,12 +911,36 @@
             this.SiteLabel.VisitedLinkColor = System.Drawing.Color.Red;
             this.SiteLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.SiteLabel_LinkClicked);
             // 
+            // OpacityBar
+            // 
+            this.OpacityBar.LargeChange = 1;
+            this.OpacityBar.Location = new System.Drawing.Point(356, 294);
+            this.OpacityBar.Minimum = 1;
+            this.OpacityBar.Name = "OpacityBar";
+            this.OpacityBar.Size = new System.Drawing.Size(104, 45);
+            this.OpacityBar.TabIndex = 6;
+            this.OpacityBar.Value = 10;
+            this.OpacityBar.Scroll += new System.EventHandler(this.Opacity_Scroll);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.Window;
+            this.label4.Location = new System.Drawing.Point(310, 298);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Opacity:";
+            // 
             // IceMemeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuText;
             this.ClientSize = new System.Drawing.Size(476, 322);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.OpacityBar);
             this.Controls.Add(this.SiteLabel);
             this.Controls.Add(this.InjectStatus);
             this.Controls.Add(this.Theme);
@@ -767,8 +958,8 @@
             this.tabControl1.ResumeLayout(false);
             this.CMDS.ResumeLayout(false);
             this.CMDS.PerformLayout();
-            this.QuickExe.ResumeLayout(false);
-            this.QuickExe.PerformLayout();
+            this.QuickCmds.ResumeLayout(false);
+            this.QuickCmds.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.JumpPowerValue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.WalkSpeedValue)).EndInit();
             this.LuaC.ResumeLayout(false);
@@ -777,6 +968,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.LuaBox)).EndInit();
             this.Extras.ResumeLayout(false);
             this.Extras.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.OpacityBar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -794,7 +986,7 @@
         private System.Windows.Forms.TextBox CmdTextBox;
         private System.Windows.Forms.Button Open;
         private System.Windows.Forms.Button Inject;
-        private System.Windows.Forms.TabPage QuickExe;
+        private System.Windows.Forms.TabPage QuickCmds;
         private System.Windows.Forms.Button Btools;
         private System.Windows.Forms.Button FF;
         private System.Windows.Forms.Button Ws;
@@ -829,6 +1021,19 @@
         private System.Windows.Forms.Button Credits;
         private System.Windows.Forms.CheckBox ClickTpCheckBox;
         private System.Windows.Forms.LinkLabel SiteLabel;
+        private System.Windows.Forms.Button PrintLuaCBtn;
+        private System.Windows.Forms.Button PrintLuaBtn;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button LuaCNightBtn;
+        private System.Windows.Forms.Button LuaCDayBtn;
+        private System.Windows.Forms.Button LuaCIlluminatiBtn;
+        private System.Windows.Forms.Button LuaCDKitBtn;
+        private System.Windows.Forms.Button LuaBSODBtn;
+        private System.Windows.Forms.Button LuaWSJPBtn;
+        private System.Windows.Forms.TrackBar OpacityBar;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckBox CheckUpdatesBox;
     }
 }
 

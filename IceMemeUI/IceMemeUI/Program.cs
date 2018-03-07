@@ -53,18 +53,21 @@ namespace IceMemeUI
         {
             try
             {
-                using (WebClient client = new WebClient())
+                if (Properties.Settings.Default.CheckUpdates)
                 {
-                    string WebVersion = client.DownloadString("https://rakion99.github.io/IceMeme/Version.txt");
-                    string CurrentVerion = Application.ProductVersion;
-                    string UpdateFound = string.Format("An update is available\nYour Current version is: {0}\nNew Version is: {1}\n\nDo you want to update?", CurrentVerion, WebVersion);
-                    if (WebVersion != CurrentVerion)
+                    using (WebClient client = new WebClient())
                     {
-                        DialogResult UpdaterChecker = MessageBox.Show(UpdateFound, "New Update Found", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
-                        if (UpdaterChecker == DialogResult.Yes)
+                        string WebVersion = client.DownloadString("https://rakion99.github.io/IceMeme/Version.txt");
+                        string CurrentVerion = Application.ProductVersion;
+                        string UpdateFound = string.Format("An update is available\nYour Current version is: {0}\nNew Version is: {1}\n\nDo you want to update?", CurrentVerion, WebVersion);
+                        if (WebVersion != CurrentVerion)
                         {
-                            System.Diagnostics.Process.Start("https://github.com/rakion99/IceMeme");
-                            Environment.Exit(0);
+                            DialogResult UpdaterChecker = MessageBox.Show(UpdateFound, "New Update Found", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+                            if (UpdaterChecker == DialogResult.Yes)
+                            {
+                                System.Diagnostics.Process.Start("https://github.com/rakion99/IceMeme");
+                                Environment.Exit(0);
+                            }
                         }
                     }
                 }

@@ -2,15 +2,16 @@
 using System.IO;
 using System.IO.Pipes;
 using System.Runtime.InteropServices;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace IceMemeUI
 {
     class NamedPipes
     {
-        public static string cmdpipe = "IceCmd";//name of command pipe
-        public static string scriptpipe = "IceLuaC";// name of lua c pipe
-        public static string luapipe = "MemeLua";//name of lua pipe
+        public static string cmdpipename = "IceCmd";//name of command pipe
+        public static string luacpipename = "IceLuaC";// name of lua c pipe
+        public static string luapipename = "MemeLua";//name of lua pipe
 
         [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]
@@ -47,13 +48,13 @@ namespace IceMemeUI
         //command pipe function
         public static void CommandPipe(string command)
         {
-            if (NamedPipeExist(cmdpipe))
+            if (NamedPipeExist(cmdpipename))
             {
-                new System.Threading.Thread(() =>//lets run this in another thread so if roblox crash the ui/gui don't freeze or something
+                new Thread(() =>//lets run this in another thread so if roblox crash the ui/gui don't freeze or something
                 {
                     try
                     {
-                    using (NamedPipeClientStream namedPipeClientStream = new NamedPipeClientStream(".", cmdpipe, PipeDirection.Out))
+                    using (NamedPipeClientStream namedPipeClientStream = new NamedPipeClientStream(".", cmdpipename, PipeDirection.Out))
                     {
                         namedPipeClientStream.Connect();
                         using (StreamWriter streamWriter = new StreamWriter(namedPipeClientStream))
@@ -83,29 +84,32 @@ namespace IceMemeUI
         //lua c pipe function
         public static void LuaCPipe(string script)
         {
-            if (NamedPipeExist(scriptpipe))
+            if (NamedPipeExist(luacpipename))
             {
-                try
+                new Thread(() =>//lets run this in another thread so if roblox crash the ui/gui don't freeze or something
                 {
-                    using (NamedPipeClientStream namedPipeClientStream = new NamedPipeClientStream(".", scriptpipe, PipeDirection.Out))
+                    try
                     {
-                        namedPipeClientStream.Connect();
-                        using (StreamWriter streamWriter = new StreamWriter(namedPipeClientStream, System.Text.Encoding.Default, 999999))//changed buffer to max 1mb since default buffer is 1kb
+                        using (NamedPipeClientStream namedPipeClientStream = new NamedPipeClientStream(".", luacpipename, PipeDirection.Out))
                         {
-                            streamWriter.Write(script);
-                            streamWriter.Dispose();
+                            namedPipeClientStream.Connect();
+                            using (StreamWriter streamWriter = new StreamWriter(namedPipeClientStream, System.Text.Encoding.Default, 999999))//changed buffer to max 1mb since default buffer is 1kb
+                            {
+                                streamWriter.Write(script);
+                                streamWriter.Dispose();
+                            }
+                            namedPipeClientStream.Dispose();
                         }
-                        namedPipeClientStream.Dispose();
                     }
-                }
-                catch (IOException)
-                {
-                    MessageBox.Show("Error occured connecting to the pipe.", "Connection Failed!", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message.ToString());
-                }
+                    catch (IOException)
+                    {
+                        MessageBox.Show("Error occured connecting to the pipe.", "Connection Failed!", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message.ToString());
+                    }
+                }).Start();
             }
             else
             {
@@ -117,29 +121,32 @@ namespace IceMemeUI
         //lua pipe function
         public static void LuaPipe(string script)
         {
-            if (NamedPipeExist(luapipe))
+            if (NamedPipeExist(luapipename))
             {
-                try
+                new Thread(() =>//lets run this in another thread so if roblox crash the ui/gui don't freeze or something
                 {
-                    using (NamedPipeClientStream namedPipeClientStream = new NamedPipeClientStream(".", luapipe, PipeDirection.Out))
+                    try
                     {
-                        namedPipeClientStream.Connect();
-                        using (StreamWriter streamWriter = new StreamWriter(namedPipeClientStream, System.Text.Encoding.Default, 999999))//changed buffer to max 1mb since default buffer is 1kb
+                        using (NamedPipeClientStream namedPipeClientStream = new NamedPipeClientStream(".", luapipename, PipeDirection.Out))
                         {
-                            streamWriter.Write(script);
-                            streamWriter.Dispose();
+                            namedPipeClientStream.Connect();
+                            using (StreamWriter streamWriter = new StreamWriter(namedPipeClientStream, System.Text.Encoding.Default, 999999))//changed buffer to max 1mb since default buffer is 1kb
+                            {
+                                streamWriter.Write(script);
+                                streamWriter.Dispose();
+                            }
+                            namedPipeClientStream.Dispose();
                         }
-                        namedPipeClientStream.Dispose();
                     }
-                }
-                catch (IOException)
-                {
-                    MessageBox.Show("Error occured connecting to the pipe.", "Connection Failed!", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message.ToString());
-                }
+                    catch (IOException)
+                    {
+                        MessageBox.Show("Error occured connecting to the pipe.", "Connection Failed!", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message.ToString());
+                    }
+                }).Start();
             }
             else
             {

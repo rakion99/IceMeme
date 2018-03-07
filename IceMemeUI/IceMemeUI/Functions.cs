@@ -10,12 +10,12 @@ namespace IceMemeUI
         public static string exploitdll = "IceMeme.dll";//this is the name of your dll
         public static void Inject()
         {
-            if (NamedPipes.NamedPipeExist(NamedPipes.scriptpipe))//check if the pipe exist
+            if (NamedPipes.NamedPipeExist(NamedPipes.luacpipename))//check if the pipe exist
             {
                 MessageBox.Show("Already injected!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);//if the pipe exist that's mean that we don't need to inject
                 return;
             }
-            else if (!NamedPipes.NamedPipeExist(NamedPipes.scriptpipe))//check if the pipe don't exist
+            else if (!NamedPipes.NamedPipeExist(NamedPipes.luacpipename))//check if the pipe don't exist
             {
                 switch (Injector.DllInjector.GetInstance.Inject("RobloxPlayerBeta", AppDomain.CurrentDomain.BaseDirectory + exploitdll))//Process name and dll directory
                 {
@@ -30,7 +30,7 @@ namespace IceMemeUI
                         return;
                 }
                 Thread.Sleep(3000);//pause the ui for 3 seconds
-                if (!NamedPipes.NamedPipeExist(NamedPipes.scriptpipe))//check if the pipe dont exist
+                if (!NamedPipes.NamedPipeExist(NamedPipes.luacpipename))//check if the pipe dont exist
                 {
                     MessageBox.Show("Injection Failed!\nMaybe you are Missing something\nor took more time to check if was ready\nor other stuff", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);//display that the pipe was not found so the injection was unsuccessful
                 }

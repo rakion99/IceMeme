@@ -70,6 +70,7 @@
       <HintPath>..\packages\FCTB.2.16.21.0\lib\FastColoredTextBox.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -93,6 +94,7 @@
     <Compile Include="NamedPipes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuickExecution.cs" />
     <EmbeddedResource Include="IceMemeForm.resx">
       <DependentUpon>IceMemeForm.cs</DependentUpon>
     </EmbeddedResource>
