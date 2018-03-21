@@ -451,7 +451,7 @@
         '\'',
         '\''};
             this.LuaCBox.AutoIndentCharsPatterns = "\n^\\s*[\\w\\.]+(\\s\\w+)?\\s*(?<range>=)\\s*(?<range>.+)\n";
-            this.LuaCBox.AutoScrollMinSize = new System.Drawing.Size(2, 14);
+            this.LuaCBox.AutoScrollMinSize = new System.Drawing.Size(27, 14);
             this.LuaCBox.BackBrush = null;
             this.LuaCBox.BackColor = System.Drawing.SystemColors.MenuText;
             this.LuaCBox.BracketsHighlightStrategy = FastColoredTextBoxNS.BracketsHighlightStrategy.Strategy2;
@@ -460,7 +460,6 @@
             this.LuaCBox.CommentPrefix = "--";
             this.LuaCBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.LuaCBox.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.LuaCBox.Font = new System.Drawing.Font("Courier New", 9.75F);
             this.LuaCBox.IsReplaceMode = false;
             this.LuaCBox.Language = FastColoredTextBoxNS.Language.Lua;
             this.LuaCBox.LeftBracket = '(';
@@ -609,7 +608,7 @@
         '\'',
         '\''};
             this.LuaBox.AutoIndentCharsPatterns = "\n^\\s*[\\w\\.]+(\\s\\w+)?\\s*(?<range>=)\\s*(?<range>.+)\n";
-            this.LuaBox.AutoScrollMinSize = new System.Drawing.Size(106, 14);
+            this.LuaBox.AutoScrollMinSize = new System.Drawing.Size(131, 14);
             this.LuaBox.BackBrush = null;
             this.LuaBox.BackColor = System.Drawing.SystemColors.MenuText;
             this.LuaBox.BracketsHighlightStrategy = FastColoredTextBoxNS.BracketsHighlightStrategy.Strategy2;
@@ -618,6 +617,7 @@
             this.LuaBox.CommentPrefix = "--";
             this.LuaBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.LuaBox.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.LuaBox.Font = new System.Drawing.Font("Courier New", 9.75F);
             this.LuaBox.IsReplaceMode = false;
             this.LuaBox.Language = FastColoredTextBoxNS.Language.Lua;
             this.LuaBox.LeftBracket = '(';
@@ -843,7 +843,7 @@
             this.Inject.BackColor = System.Drawing.SystemColors.MenuText;
             this.Inject.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Inject.ForeColor = System.Drawing.SystemColors.Window;
-            this.Inject.Location = new System.Drawing.Point(164, 271);
+            this.Inject.Location = new System.Drawing.Point(147, 273);
             this.Inject.Name = "Inject";
             this.Inject.Size = new System.Drawing.Size(75, 23);
             this.Inject.TabIndex = 1;
@@ -872,7 +872,7 @@
             this.Theme.BackColor = System.Drawing.SystemColors.MenuText;
             this.Theme.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Theme.ForeColor = System.Drawing.SystemColors.Window;
-            this.Theme.Location = new System.Drawing.Point(277, 271);
+            this.Theme.Location = new System.Drawing.Point(266, 273);
             this.Theme.Name = "Theme";
             this.Theme.Size = new System.Drawing.Size(75, 23);
             this.Theme.TabIndex = 3;
@@ -954,7 +954,7 @@
             this.Name = "IceMemeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "IceMeme UI Dark Theme";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.IceSourceForm_FormClosed);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.IceMemeForm_FormClosed);
             this.tabControl1.ResumeLayout(false);
             this.CMDS.ResumeLayout(false);
             this.CMDS.PerformLayout();

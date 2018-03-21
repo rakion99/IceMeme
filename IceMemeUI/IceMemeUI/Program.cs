@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Net;
+using System.Security.Cryptography;
 using System.Windows.Forms;
 
 namespace IceMemeUI
@@ -13,11 +14,10 @@ namespace IceMemeUI
         [STAThread]
         static void Main()
         {
-            VersionCheck();
-            Checks();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new IceMemeForm());
+            Checks();
+            VersionCheck();
         }
 
         private static void Checks()
@@ -32,9 +32,9 @@ namespace IceMemeUI
                 {
                     Directory.CreateDirectory("LuaCScripts");
                 }
-                if (!File.Exists("./IceMeme.dll"))
+                if (!File.Exists("./" + Functions.exploitdll))
                 {
-                    MessageBox.Show("IceMeme.dll not found", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(Functions.exploitdll + " not found", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     Environment.Exit(0);
                 }
                 if (!File.Exists("./FastColoredTextBox.dll"))
@@ -46,6 +46,7 @@ namespace IceMemeUI
             catch (Exception e)
             {
                 MessageBox.Show(e.Message.ToString());
+                Environment.Exit(0);
             }
         }
 
@@ -57,16 +58,27 @@ namespace IceMemeUI
                 {
                     using (WebClient client = new WebClient())
                     {
-                        string WebVersion = client.DownloadString("https://rakion99.github.io/IceMeme/Version.txt");
-                        string CurrentVerion = Application.ProductVersion;
-                        string UpdateFound = string.Format("An update is available\nYour Current version is: {0}\nNew Version is: {1}\n\nDo you want to update?", CurrentVerion, WebVersion);
-                        if (WebVersion != CurrentVerion)
+                        string UIWebVersion = client.DownloadString("https://rakion99.github.io/IceMeme/Version.txt");
+                        string UICurrentVerion = Application.ProductVersion;
+                        if (UIWebVersion != UICurrentVerion)
                         {
-                            DialogResult UpdaterChecker = MessageBox.Show(UpdateFound, "New Update Found", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
-                            if (UpdaterChecker == DialogResult.Yes)
+                            string UIUpdateFound = string.Format("An update is available\nYour Current version is: {0}\nNew Version is: {1}\n\nDo you want to update?", UICurrentVerion, UIWebVersion);
+                            DialogResult UIUpdaterChecker = MessageBox.Show(UIUpdateFound, "New Update Found", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+                            if (UIUpdaterChecker == DialogResult.Yes)
                             {
-                                System.Diagnostics.Process.Start("https://github.com/rakion99/IceMeme");
-                                Environment.Exit(0);
+                                Functions.UpdateUI = true;
+                                new UpdaterForm().ShowDialog();
+                            }
+                        }
+                        string DLLCurrentHASH = Getsha256(@".\" + Functions.exploitdll);
+                        string DLLWebHASH = client.DownloadString("https://rakion99.github.io/IceMeme/DLLHash.txt");
+                        if (DLLWebHASH != DLLCurrentHASH)
+                        {
+                            DialogResult DLLUpdaterChecker = MessageBox.Show("An update for the dll is available\n\nDo you want to update?", "New Update Found", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+                            if (DLLUpdaterChecker == DialogResult.Yes)
+                            {
+                                Functions.UpdateDLL = true;
+                                new UpdaterForm().ShowDialog();
                             }
                         }
                     }
@@ -74,8 +86,20 @@ namespace IceMemeUI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString(), "Exception");
+                MessageBox.Show(ex.Message.ToString(), "Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            Application.Run(new IceMemeForm());
+        }
+
+        private static string Getsha256(string filepath)
+        {
+            FileStream filestream;
+            filestream = new FileStream(filepath, FileMode.Open)
+            {
+                Position = 0
+            };
+
+            return BitConverter.ToString(SHA256.Create().ComputeHash(filestream)).Replace("-", string.Empty);
         }
     }
 }

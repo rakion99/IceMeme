@@ -133,5 +133,8 @@ namespace IceMemeUI
                 lsb.Items.Add(file.Name);
             }
         }
+
+        public static bool UpdateUI = false;
+        public static bool UpdateDLL = false;
     }
 }

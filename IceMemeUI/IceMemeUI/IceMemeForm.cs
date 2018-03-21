@@ -196,7 +196,7 @@ namespace IceMemeUI
             if (thm > 1) thm = 0;//if int thm is greater than 1 set it to 0
         }
 
-        private void IceSourceForm_FormClosed(object sender, FormClosedEventArgs e) => Environment.Exit(0);//When the Form is closed Call Enviroment Exit to terminate the process
+        private void IceMemeForm_FormClosed(object sender, FormClosedEventArgs e) => Environment.Exit(0);//When the Form is closed Call Enviroment Exit to terminate the process
 
         private void Executelua_Click(object sender, EventArgs e)
         {
