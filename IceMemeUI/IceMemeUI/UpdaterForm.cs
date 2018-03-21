@@ -27,7 +27,8 @@ namespace IceMemeUI
                         Directory.CreateDirectory("tmp");
                         WebC.DownloadProgressChanged += WebC_DownloadProgressChanged;
                         WebC.DownloadDataCompleted += new DownloadDataCompletedEventHandler(WebC_DownloadUICompleted);
-                        var data = await WebC.DownloadDataTaskAsync(new Uri("https://rakion99.github.io/IceMeme/IceMemeUI.exe"));
+                        string ExeDownloadLocation = WebC.DownloadString("https://rakion99.github.io/IceMeme/IceMemeUI.txt");
+                        var data = await WebC.DownloadDataTaskAsync(new Uri(ExeDownloadLocation));
                         File.WriteAllBytes(@".\tmp\IceMemeUI.exe", data);
                     }
                 }
@@ -39,7 +40,8 @@ namespace IceMemeUI
                         Directory.CreateDirectory("tmp");
                         WebC2.DownloadProgressChanged += WebC_DownloadProgressChanged;
                         WebC2.DownloadDataCompleted += new DownloadDataCompletedEventHandler(WebC_DownloadDLLCompleted);
-                        var data = await WebC2.DownloadDataTaskAsync(new Uri("https://rakion99.github.io/IceMeme/IceMeme.dll"));
+                        string DllDownloadLocation = WebC2.DownloadString("https://rakion99.github.io/IceMeme/IceMemeDLL.txt");
+                        var data = await WebC2.DownloadDataTaskAsync(new Uri(DllDownloadLocation));
                         File.WriteAllBytes(@".\tmp\" + Functions.exploitdll, data);
                     }
                 }
