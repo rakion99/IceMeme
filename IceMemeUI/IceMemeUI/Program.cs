@@ -70,7 +70,7 @@ namespace IceMemeUI
                                 new UpdaterForm().ShowDialog();
                             }
                         }
-                        string DLLCurrentHASH = Getsha256(@".\" + Functions.exploitdll);
+                        string DLLCurrentHASH = Getsha256("./" + Functions.exploitdll);
                         string DLLWebHASH = client.DownloadString("https://rakion99.github.io/IceMeme/DLLHash.txt");
                         if (DLLWebHASH != DLLCurrentHASH)
                         {
