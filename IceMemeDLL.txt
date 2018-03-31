@@ -1,1 +1,1 @@
-https://github.com/rakion99/IceMeme/releases/download/vv2.6.6654.23911/IceMeme.dll
+https://github.com/rakion99/IceMeme/releases/download/v2.6.6654.23912/IceMeme.dll
