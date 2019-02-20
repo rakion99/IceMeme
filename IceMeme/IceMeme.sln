@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2020
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IceMeme", "IceMeme\IceMeme.vcxproj", "{4A3315CF-A824-41DA-942A-213B9075E985}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IceMemeUI", "IceMemeUI\IceMemeUI.csproj", "{D736F591-0CA9-456F-A86B-58F836E151F7}"
 EndProject
 Global
@@ -15,6 +17,16 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4A3315CF-A824-41DA-942A-213B9075E985}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{4A3315CF-A824-41DA-942A-213B9075E985}.Debug|x64.ActiveCfg = Debug|x64
+		{4A3315CF-A824-41DA-942A-213B9075E985}.Debug|x64.Build.0 = Debug|x64
+		{4A3315CF-A824-41DA-942A-213B9075E985}.Debug|x86.ActiveCfg = Debug|Win32
+		{4A3315CF-A824-41DA-942A-213B9075E985}.Debug|x86.Build.0 = Debug|Win32
+		{4A3315CF-A824-41DA-942A-213B9075E985}.Release|Any CPU.ActiveCfg = Release|Win32
+		{4A3315CF-A824-41DA-942A-213B9075E985}.Release|x64.ActiveCfg = Release|x64
+		{4A3315CF-A824-41DA-942A-213B9075E985}.Release|x64.Build.0 = Release|x64
+		{4A3315CF-A824-41DA-942A-213B9075E985}.Release|x86.ActiveCfg = Release|Win32
+		{4A3315CF-A824-41DA-942A-213B9075E985}.Release|x86.Build.0 = Release|Win32
 		{D736F591-0CA9-456F-A86B-58F836E151F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D736F591-0CA9-456F-A86B-58F836E151F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D736F591-0CA9-456F-A86B-58F836E151F7}.Debug|x64.ActiveCfg = Debug|Any CPU
