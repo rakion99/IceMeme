@@ -8,7 +8,7 @@
 
 # Features:
 
-## Tested and Working in Windows 7 32 bits and Windows 10 64 bits
+## Tested and Working in Windows 7 32 bit and Windows 10 64 bit
 
 ### NEW Feature:
 
