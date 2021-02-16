@@ -63,7 +63,7 @@
 ## VOID for getobjects
 ## tepig for Memehax
 ## Eternal for RetCheck https://github.com/EternalV3/Retcheck
-## AutisticBobby https://youtube.com/c/AutisticBobby
+## AutisticBobby https://www.youtube.com/c/Hayden959
 ## DOGGO "bypass/workaround for setting values on non-fe games"
 <sub> ICE By: Josh() and Cosmology</sub>
 ## Powered by cURL
