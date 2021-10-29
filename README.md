@@ -1,9 +1,8 @@
-# IceMeme(Ice and MemeHax) Updated!
-# By using IceMeme you accept that you wont Sell your exploit in any way
+# Not worth to update it or use it anymore
 
 
-# Go to Release to Download
-[Click Here to go to the latest release](https://github.com/rakion99/IceSource/releases/latest)
+## IceMeme(Ice and MemeHax) Updated!
+## By using IceMeme you accept that you wont Sell your exploit in any way
 
 
 # Features:
@@ -55,7 +54,7 @@
 ![](https://i.imgur.com/rAER3e5.png)
 
 # Credits:
-## rakion99 for updating and improving this :wink:(I made a Discord Server if you want to join or not [IcE StUfF HeLp](https://discord.gg/K2A2Xhv "Click to join"))
+## rakion99 for updating and improving this :wink:
 ## Roblox for making a exploitable game :/
 ## Jayden
 ## louka for danghui
